@@ -43,6 +43,11 @@ const LVVDatabase = {
             name: 'Technical Bulletins',
             description: 'Updates and clarifications on technical matters',
             color: '#be185d'
+        },
+        QUICKREF: {
+            name: 'Quick Reference',
+            description: 'Exam day quick lookup - key facts and common questions',
+            color: '#7c3aed'
         }
     },
 
@@ -540,28 +545,226 @@ const LVVDatabase = {
             summary: 'How to certify lighting modifications.'
         },
 
-        // ==================== NZCCM ====================
+        // ==================== NZCCM - COMPLETE ====================
         {
-            id: 'nzccm-main',
-            title: 'NZ Car Construction Manual - Introduction',
-            description: 'Introduction to the NZ Car Construction Manual for scratch-built vehicles.',
+            id: 'nzccm-full',
+            title: 'NZ Car Construction Manual (Complete)',
+            description: 'The complete NZ Car Construction Manual - 529 pages covering all aspects of vehicle design, modification, and construction. FREE download since Feb 2021.',
             category: 'NZCCM',
-            url: 'standards/nzccm/nzccm_introduction.pdf',
-            keywords: ['NZCCM', 'scratch-built', 'kit car', 'construction'],
-            difficulty: 'advanced',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-Full-Version.pdf',
+            keywords: ['NZCCM', 'complete', 'full', 'scratch-built', 'kit car', 'construction', 'design'],
+            difficulty: 'essential',
             priority: 1,
-            summary: 'The primary resource for building vehicles from scratch in New Zealand.'
+            summary: 'The bible for scratch-built vehicles. 529 pages covering chassis, brakes, steering, suspension, engine, fuel, electrical, and more. Essential reference.'
         },
         {
-            id: 'nzccm-design',
-            title: 'NZCCM - Design Requirements',
-            description: 'Design requirements for scratch-built vehicles.',
+            id: 'nzccm-ch2',
+            title: 'NZCCM Chapter 2 - About This Manual',
+            description: 'Introduction to the Car Construction Manual - how to use it, scope, and helpful information.',
             category: 'NZCCM',
-            url: 'standards/nzccm/nzccm_design.pdf',
-            keywords: ['design', 'engineering', 'calculations'],
-            difficulty: 'advanced',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH2-About-This-Manual.pdf',
+            keywords: ['introduction', 'how to use', 'scope'],
+            difficulty: 'beginner',
             priority: 2,
-            summary: 'Engineering and design requirements for custom vehicles.'
+            summary: 'Start here - explains how to navigate and use the manual effectively.'
+        },
+        {
+            id: 'nzccm-ch3',
+            title: 'NZCCM Chapter 3 - Authority Card Process',
+            description: 'The authority card process for scratch-built vehicles - administrative requirements and procedures.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH3-Authority-Card-Process.pdf',
+            keywords: ['authority card', 'process', 'administration', 'approval'],
+            difficulty: 'intermediate',
+            priority: 3,
+            summary: 'How the authority card system works for scratch-built vehicle certification.'
+        },
+        {
+            id: 'nzccm-ch4',
+            title: 'NZCCM Chapter 4 - Terms & Definitions',
+            description: 'Technical terminology and definitions used throughout the NZ Car Construction Manual.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH4-Terms-And-Definitions.pdf',
+            keywords: ['terms', 'definitions', 'glossary', 'terminology'],
+            difficulty: 'beginner',
+            priority: 4,
+            summary: 'Essential glossary - understand the technical language before diving into technical chapters.'
+        },
+        {
+            id: 'nzccm-ch5',
+            title: 'NZCCM Chapter 5 - Chassis Modification & Construction',
+            description: 'Comprehensive guide to chassis design, modification, and construction including materials, welding, and structural integrity.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH5-Chassis-Modification-And-Construction.pdf',
+            keywords: ['chassis', 'frame', 'construction', 'welding', 'structure', 'materials', 'steel', 'tube'],
+            difficulty: 'advanced',
+            priority: 5,
+            summary: 'Critical chapter - covers chassis types, materials, welding requirements, and structural calculations. Updated July 2021.'
+        },
+        {
+            id: 'nzccm-ch6',
+            title: 'NZCCM Chapter 6 - Roll Cages',
+            description: 'Requirements for roll cage design, construction, and installation for vehicle safety.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH6-Roll-Cages.pdf',
+            keywords: ['roll cage', 'roll bar', 'safety', 'protection', 'motorsport'],
+            difficulty: 'advanced',
+            priority: 6,
+            summary: 'Roll cage design requirements - tube specifications, mounting points, and construction standards.'
+        },
+        {
+            id: 'nzccm-ch7',
+            title: 'NZCCM Chapter 7 - Steering Systems',
+            description: 'Steering system design and modification requirements including geometry, components, and safety.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH7-Steering-Systems.pdf',
+            keywords: ['steering', 'rack', 'geometry', 'ackerman', 'column', 'universal joint'],
+            difficulty: 'advanced',
+            priority: 7,
+            summary: 'Steering geometry, component selection, and safety requirements for scratch-built vehicles.'
+        },
+        {
+            id: 'nzccm-ch8',
+            title: 'NZCCM Chapter 8 - Braking Systems',
+            description: 'Comprehensive braking system requirements including hydraulics, components, and performance calculations.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH8-Braking-Systems.pdf',
+            keywords: ['brakes', 'braking', 'hydraulic', 'master cylinder', 'disc', 'drum', 'pedal ratio'],
+            difficulty: 'advanced',
+            priority: 8,
+            summary: 'Critical safety chapter - brake system design, calculations, and component requirements.'
+        },
+        {
+            id: 'nzccm-ch9',
+            title: 'NZCCM Chapter 9 - Engine & Drivetrain',
+            description: 'Engine installation and drivetrain requirements including mounting, cooling, and transmission.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH9-Engine-And-Drivetrain.pdf',
+            keywords: ['engine', 'drivetrain', 'transmission', 'gearbox', 'differential', 'driveshaft', 'cooling', 'mounting'],
+            difficulty: 'advanced',
+            priority: 9,
+            summary: 'Engine mounting, drivetrain layout, cooling systems, and transmission requirements. Updated July 2021.'
+        },
+        {
+            id: 'nzccm-ch10',
+            title: 'NZCCM Chapter 10 - Fuel Systems',
+            description: 'Fuel system design and safety requirements including tanks, lines, and fire prevention.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH10-Fuel-Systems.pdf',
+            keywords: ['fuel', 'tank', 'fuel cell', 'fuel lines', 'fire safety', 'petrol'],
+            difficulty: 'advanced',
+            priority: 10,
+            summary: 'Fuel system safety - tank location, fuel lines, venting, and fire prevention. Updated July 2021.'
+        },
+        {
+            id: 'nzccm-ch11',
+            title: 'NZCCM Chapter 11 - Suspension Systems',
+            description: 'Suspension design principles, component requirements, and geometry for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH11-Suspension-Systems.pdf',
+            keywords: ['suspension', 'springs', 'dampers', 'geometry', 'wishbone', 'macpherson', 'live axle'],
+            difficulty: 'advanced',
+            priority: 11,
+            summary: 'Suspension types, geometry principles, and component selection for custom builds.'
+        },
+        {
+            id: 'nzccm-ch12',
+            title: 'NZCCM Chapter 12 - Wheels, Tyres & Hubs',
+            description: 'Requirements for wheels, tyres, and hub assemblies on scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH12-Wheels-Tyres-And-Hubs.pdf',
+            keywords: ['wheels', 'tyres', 'hubs', 'bearings', 'PCD', 'offset', 'load rating'],
+            difficulty: 'intermediate',
+            priority: 12,
+            summary: 'Wheel and tyre specifications, hub requirements, and load ratings.'
+        },
+        {
+            id: 'nzccm-ch13',
+            title: 'NZCCM Chapter 13 - Bodywork',
+            description: 'Body construction requirements including materials, mounting, and safety considerations.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH13-Bodywork.pdf',
+            keywords: ['body', 'bodywork', 'panels', 'fibreglass', 'mounting', 'guards'],
+            difficulty: 'intermediate',
+            priority: 13,
+            summary: 'Body construction, materials, and mounting requirements.'
+        },
+        {
+            id: 'nzccm-ch14',
+            title: 'NZCCM Chapter 14 - Electrical Systems',
+            description: 'Electrical system requirements including wiring, components, and safety.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH14-Electrical-Systems.pdf',
+            keywords: ['electrical', 'wiring', 'battery', 'alternator', 'fuses', 'circuits'],
+            difficulty: 'intermediate',
+            priority: 14,
+            summary: 'Wiring standards, component requirements, and electrical safety.'
+        },
+        {
+            id: 'nzccm-ch15',
+            title: 'NZCCM Chapter 15 - Glazing & Vision',
+            description: 'Windscreen and glazing requirements including materials, visibility, and safety standards.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH15-Glazing-And-Vision.pdf',
+            keywords: ['glazing', 'windscreen', 'glass', 'visibility', 'mirrors', 'vision'],
+            difficulty: 'intermediate',
+            priority: 15,
+            summary: 'Windscreen requirements, visibility standards, and mirror placement.'
+        },
+        {
+            id: 'nzccm-ch16',
+            title: 'NZCCM Chapter 16 - Occupant Protection',
+            description: 'Occupant safety requirements including seating, seatbelts, and protection systems.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH16-Occupant-Protection.pdf',
+            keywords: ['occupant', 'protection', 'seatbelts', 'seats', 'harness', 'safety'],
+            difficulty: 'essential',
+            priority: 16,
+            summary: 'Critical safety - seating, seatbelt mounting, and occupant protection requirements.'
+        },
+        {
+            id: 'nzccm-ch17',
+            title: 'NZCCM Chapter 17 - Lighting',
+            description: 'Lighting system requirements including headlights, indicators, and auxiliary lighting.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH17-Lighting.pdf',
+            keywords: ['lighting', 'headlights', 'indicators', 'tail lights', 'brake lights'],
+            difficulty: 'intermediate',
+            priority: 17,
+            summary: 'Lighting placement, specifications, and legal requirements.'
+        },
+        {
+            id: 'nzccm-ch18',
+            title: 'NZCCM Chapter 18 - Instruments & Controls',
+            description: 'Dashboard instruments and control requirements for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH18-Instruments-And-Controls.pdf',
+            keywords: ['instruments', 'gauges', 'controls', 'dashboard', 'speedometer'],
+            difficulty: 'intermediate',
+            priority: 18,
+            summary: 'Required instruments, control placement, and ergonomics.'
+        },
+        {
+            id: 'nzccm-ch19',
+            title: 'NZCCM Chapter 19 - Vehicle Operation',
+            description: 'Operational requirements and final checks for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH19-Vehicle-Operation.pdf',
+            keywords: ['operation', 'testing', 'final checks', 'commissioning'],
+            difficulty: 'intermediate',
+            priority: 19,
+            summary: 'Final operational requirements and vehicle commissioning procedures.'
+        },
+        {
+            id: 'nzccm-appendices',
+            title: 'NZCCM Appendices & Reference Tables',
+            description: 'Reference tables, calculations, and appendices for the NZ Car Construction Manual.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-Appendices.pdf',
+            keywords: ['appendix', 'tables', 'reference', 'calculations', 'data'],
+            difficulty: 'reference',
+            priority: 20,
+            summary: 'Quick reference tables, calculations, and technical data.'
         },
 
         // ==================== SUPPLEMENTARY INFORMATION ====================
@@ -678,6 +881,118 @@ const LVVDatabase = {
             difficulty: 'intermediate',
             priority: 1,
             summary: 'Find specific technical bulletins on various topics.'
+        },
+
+        // ==================== QUICK REFERENCE (EXAM DAY) ====================
+        {
+            id: 'qr-key-dates',
+            title: 'Quick Ref: Key Dates & Numbers',
+            description: 'Essential dates and numbers every certifier should know instantly.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['dates', 'numbers', 'quick', 'reference', '1949', '4500kg', 'thresholds'],
+            difficulty: 'essential',
+            priority: 1,
+            summary: '1949 = Historic replica cutoff | 4500kg = Heavy vehicle threshold | 1/3 suspension travel = lowering threshold | Rule 35001/1 = Vehicle Standards Compliance'
+        },
+        {
+            id: 'qr-vehicle-classes',
+            title: 'Quick Ref: Vehicle Classifications',
+            description: 'Quick reference for LVV vehicle classifications.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['classifications', 'modified', 'scratch-built', 'replica', 'reproduction'],
+            difficulty: 'essential',
+            priority: 2,
+            summary: 'MODIFIED = Based on production vehicle, keeps original VIN | SCRATCH-BUILT = New construction, gets new VIN from LVVTA | HISTORIC REPLICA = Pre-1949 copy, fewer requirements | REPRODUCTION = Post-1949 copy, full modern requirements'
+        },
+        {
+            id: 'qr-certifier-categories',
+            title: 'Quick Ref: Certifier Categories',
+            description: 'LVV Certifier appointment categories explained.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['categories', 'GMV', 'heavy', 'ONT', 'certifier types'],
+            difficulty: 'essential',
+            priority: 3,
+            summary: 'GMV = General Motor Vehicles (under 4500kg) | HV = Heavy Vehicles (over 4500kg) | ONT = Off-road & Non-transport | Specialist categories for specific areas'
+        },
+        {
+            id: 'qr-standards-numbering',
+            title: 'Quick Ref: Standards Numbering System',
+            description: 'How to decode LVV Standard numbers.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['standards', 'numbering', 'decode', '35', '40', '45', '50'],
+            difficulty: 'essential',
+            priority: 4,
+            summary: '35=Brakes | 40=Steering | 45=Suspension | 50=Structure | 55=Wheels | 60=Engine | 65=Drivetrain | 70=Fuel | 80=Electrical | 90=Lighting || -00=Intro | -10=Modified Light | -20=Scratch-built | -40=Heavy'
+        },
+        {
+            id: 'qr-certification-groups',
+            title: 'Quick Ref: Certification Threshold Groups',
+            description: 'The three groups of modifications.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['groups', 'threshold', 'always', 'sometimes', 'never'],
+            difficulty: 'essential',
+            priority: 5,
+            summary: 'GROUP 1 = ALWAYS requires cert (engine swaps, major structural, scratch-built) | GROUP 2 = Requires cert IF exceeds threshold (suspension lowering >1/3, significant power increase) | GROUP 3 = NEVER requires cert (still must meet WoF)'
+        },
+        {
+            id: 'qr-certifier-attributes',
+            title: 'Quick Ref: Certifier Attributes',
+            description: 'The essential attributes of an LVV Certifier.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['attributes', 'qualities', 'integrity', 'independence', 'conscientious'],
+            difficulty: 'essential',
+            priority: 6,
+            summary: 'Technically skilled | Vastly experienced | Conscientious | Independent | Reliable | Good people skills | High integrity - ALL are required, technical skill alone is NOT sufficient'
+        },
+        {
+            id: 'qr-document-hierarchy',
+            title: 'Quick Ref: Document Hierarchy',
+            description: 'The legal hierarchy of LVV documents.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['hierarchy', 'legal', 'authority', 'documents'],
+            difficulty: 'essential',
+            priority: 7,
+            summary: '1. Land Transport Act 1998 | 2. Land Transport Rule 35001/1 (Vehicle Standards Compliance) | 3. LVV Code | 4. Operating Requirements Schedule (ORS) | 5. LVV Standards'
+        },
+        {
+            id: 'qr-must-vs-should',
+            title: 'Quick Ref: Must vs Should vs May',
+            description: 'Understanding mandatory vs optional requirements.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['must', 'shall', 'should', 'may', 'mandatory', 'optional'],
+            difficulty: 'essential',
+            priority: 8,
+            summary: 'MUST/SHALL = Mandatory, no flexibility, must comply | SHOULD = Recommended but not mandatory | MAY = Optional, permitted but not required'
+        },
+        {
+            id: 'qr-common-mods',
+            title: 'Quick Ref: Common Modifications',
+            description: 'Quick guide to common modification certification requirements.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['common', 'modifications', 'engine swap', 'lowering', 'turbo'],
+            difficulty: 'essential',
+            priority: 9,
+            summary: 'Engine swap = Always cert (60-10, 65-10, 70-10, 80-10) | Lowering >1/3 = Cert required (45-10) | Turbo/supercharger = Usually cert (60-10) | Wheels beyond spec = Check thresholds (55-10) | Roll cage = Always cert (50-10)'
+        },
+        {
+            id: 'qr-nzccm-chapters',
+            title: 'Quick Ref: NZCCM Chapter Guide',
+            description: 'Quick reference to NZCCM chapter contents.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['NZCCM', 'chapters', 'car construction manual'],
+            difficulty: 'reference',
+            priority: 10,
+            summary: 'Ch5=Chassis | Ch6=Roll Cages | Ch7=Steering | Ch8=Brakes | Ch9=Engine/Drivetrain | Ch10=Fuel | Ch11=Suspension | Ch12=Wheels | Ch13=Body | Ch14=Electrical | Ch15=Glazing | Ch16=Occupant Protection | Ch17=Lighting | Ch18=Instruments | Ch19=Operation'
         }
     ],
 
