@@ -1,44 +1,164 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>A Site for Portfolio | CoolDaddyDesign</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LVV Certifier Training Platform - Comprehensive training for aspiring Low Volume Vehicle Certifiers in New Zealand">
+    <meta name="keywords" content="LVV, LVVTA, certifier, training, New Zealand, vehicle certification, modified vehicles">
 
-				<!-- Header -->
-					<header id="header">
-						<h1>This could be a site for you</h1>
-						<p>Personal Porfolio &nbsp;&bull;&nbsp; Clubs &nbsp;&bull;&nbsp; Tribes etc</p>
-						<nav>
-							<ul>
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-						</nav>
-					</header>
+    <title>LVV Certifier Training Platform | LVVTA NZ</title>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Tribal. Design: <a href="http://www.cooldaddydesign.com">Cooldaddydesign</a>.</span>
-					</footer>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
 
-			</div>
-		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/js/database.js" as="script">
+    <link rel="preload" href="assets/js/modules.js" as="script">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <a href="#home" class="logo" data-nav="home">
+                    <div class="logo-icon">LVV</div>
+                    <span>Training Platform</span>
+                </a>
+
+                <nav class="main-nav">
+                    <a href="#home" data-nav="home" class="active">Home</a>
+                    <a href="#modules" data-nav="modules">Modules</a>
+                    <a href="#documents" data-nav="documents">Documents</a>
+                    <a href="#progress" data-nav="progress">Progress</a>
+                </nav>
+
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" placeholder="Search documents, topics...">
+                    <div id="search-results"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- Content loaded dynamically by app.js -->
+            <div class="home-view">
+                <section class="hero">
+                    <h1>LVV Certifier Training Platform</h1>
+                    <p class="hero-quote">"To become an LVV Certifier you will need to be technically skilled, vastly experienced, conscientious, independent, reliable, have good people skills, and a high level of integrity."</p>
+                    <p class="hero-source">- LVVTA</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-lg" onclick="LVVApp.navigate('modules')">
+                            Start Learning
+                        </button>
+                        <button class="btn btn-secondary btn-lg" onclick="LVVApp.navigate('documents')">
+                            Browse Documents
+                        </button>
+                    </div>
+                </section>
+
+                <section class="quick-start">
+                    <h2>Quick Start</h2>
+                    <div class="card-grid">
+                        <div class="card" onclick="LVVApp.navigate('modules', ['mod-1'])">
+                            <div class="card-icon">📖</div>
+                            <h3>Module 1</h3>
+                            <p>Introduction to LVV Certification</p>
+                        </div>
+                        <div class="card" onclick="LVVApp.openDocument('ors-main')">
+                            <div class="card-icon">📋</div>
+                            <h3>ORS</h3>
+                            <p>Operating Requirements Schedule</p>
+                        </div>
+                        <div class="card" onclick="LVVApp.openDocument('lvv-code')">
+                            <div class="card-icon">⚖️</div>
+                            <h3>LVV Code</h3>
+                            <p>Legal Framework</p>
+                        </div>
+                        <div class="card" onclick="LVVApp.openDocument('cert-threshold')">
+                            <div class="card-icon">📊</div>
+                            <h3>Thresholds</h3>
+                            <p>When Certification Required</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="features">
+                    <h2>Platform Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature">
+                            <h3>🔍 Searchable Documents</h3>
+                            <p>Find any LVVTA document instantly with full-text search across all categories.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>📚 Structured Learning</h3>
+                            <p>Progress through modules designed to build your knowledge systematically.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>✅ Self-Assessment</h3>
+                            <p>Test your understanding with quizzes after each module.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>📈 Progress Tracking</h3>
+                            <p>Your progress is saved automatically. Pick up where you left off.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Essential Documents Section -->
+                <section class="quick-start">
+                    <h2>Essential Documents</h2>
+                    <div class="card-grid">
+                        <div class="card" onclick="LVVApp.openDocument('ors-ch4')">
+                            <div class="card-icon">👤</div>
+                            <h3>Certifier Criteria</h3>
+                            <p>ORS Chapter 4 - Background requirements</p>
+                        </div>
+                        <div class="card" onclick="LVVApp.openDocument('ors-ch5')">
+                            <div class="card-icon">📝</div>
+                            <h3>Application Process</h3>
+                            <p>ORS Chapter 5 - How to apply</p>
+                        </div>
+                        <div class="card" onclick="LVVApp.openDocument('ors-ch2')">
+                            <div class="card-icon">🚙</div>
+                            <h3>Vehicle Classifications</h3>
+                            <p>ORS Chapter 2 - Types of LVVs</p>
+                        </div>
+                        <div class="card" onclick="LVVApp.openDocument('std-155-01')">
+                            <div class="card-icon">📑</div>
+                            <h3>Standards Index</h3>
+                            <p>Complete list of all LVV Standards</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p><strong>Disclaimer:</strong> This is an unofficial training aid. Always refer to official LVVTA documents for authoritative information.</p>
+                <p>
+                    <a href="https://lvvta.org.nz" target="_blank" rel="noopener">LVVTA Official Website</a> |
+                    <a href="https://lvvta.org.nz/documents.html" target="_blank" rel="noopener">LVVTA Documents</a> |
+                    <a href="https://lvvta.org.nz/documents.html#ors" target="_blank" rel="noopener">ORS Section</a>
+                </p>
+                <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted);">
+                    Built to help aspiring LVV Certifiers master their craft and serve New Zealand's vehicle modification community with excellence.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/modules.js"></script>
+    <script src="assets/js/progress.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
 </html>
