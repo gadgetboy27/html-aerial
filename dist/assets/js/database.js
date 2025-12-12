@@ -1,17 +1,40 @@
 /**
- * LVV Certifier Training Platform - Document Database
- * Complete catalog of LVVTA documents for training and reference
+ * LVV Certifier Training Platform - COMPREHENSIVE Document Database
+ * Complete catalog of ALL LVVTA documents for training and reference
  *
  * Source: https://lvvta.org.nz/documents.html
+ * Last Updated: Based on official LVVTA documents page
+ *
+ * IMPORTANT: This database aims to be 100% comprehensive for LVV Certifier training
  */
 
 const LVVDatabase = {
     baseUrl: 'https://lvvta.org.nz/documents/',
 
     categories: {
+        STANDARDS: {
+            name: 'LVV Standards',
+            description: 'Technical standards for vehicle modifications - legally binding',
+            color: '#059669'
+        },
+        MOTO_STANDARDS: {
+            name: 'LVV Motorcycle Standards',
+            description: 'Standards specific to motorcycles and trikes (145 series)',
+            color: '#10b981'
+        },
+        NZCCM: {
+            name: 'NZ Car Construction Manual',
+            description: 'Comprehensive manual for scratch-built vehicles',
+            color: '#d97706'
+        },
+        NZMCM: {
+            name: 'NZ Motorcycle Construction Manual',
+            description: 'Construction manual for scratch-built motorcycles',
+            color: '#f59e0b'
+        },
         ORS: {
             name: 'Operating Requirements Schedule',
-            description: 'The day-to-day rules of the LVV certification system',
+            description: 'Day-to-day operational rules for LVV certification system',
             color: '#2563eb'
         },
         CODE: {
@@ -19,868 +42,1276 @@ const LVVDatabase = {
             description: 'The legal framework for LVV certification',
             color: '#7c3aed'
         },
-        STANDARDS: {
-            name: 'LVV Standards',
-            description: 'Technical standards for vehicle modifications',
-            color: '#059669'
-        },
-        NZCCM: {
-            name: 'NZ Car Construction Manual',
-            description: 'Guidelines for scratch-built vehicles',
-            color: '#d97706'
-        },
-        FORMS: {
-            name: 'Certification Forms',
-            description: 'Official forms for LVV certification',
+        THRESHOLD: {
+            name: 'Certification Thresholds',
+            description: 'Defines when LVV certification is required',
             color: '#dc2626'
+        },
+        INFO_TECH: {
+            name: 'Information Sheets - Technical',
+            description: 'Technical guidance and updates for certifiers',
+            color: '#0891b2'
+        },
+        INFO_NONTECH: {
+            name: 'Information Sheets - Non-technical',
+            description: 'General information and safety alerts',
+            color: '#06b6d4'
         },
         SUPPLEMENTARY: {
             name: 'Supplementary Information',
-            description: 'Additional guidance and reference materials',
-            color: '#0891b2'
+            description: 'Tech bulletins, component approvals, certifier lists',
+            color: '#8b5cf6'
         },
-        TECHNICAL: {
-            name: 'Technical Bulletins',
-            description: 'Updates and clarifications on technical matters',
-            color: '#be185d'
+        FORMS: {
+            name: 'Forms & Processes',
+            description: 'Official certification forms and procedures',
+            color: '#ec4899'
+        },
+        EXTERNAL: {
+            name: 'External Resources',
+            description: 'VIRM, Land Transport Rules, and external links',
+            color: '#6366f1'
         },
         QUICKREF: {
             name: 'Quick Reference',
-            description: 'Exam day quick lookup - key facts and common questions',
-            color: '#7c3aed'
+            description: 'Exam day quick lookup - key facts',
+            color: '#f43f5e'
         }
     },
 
     documents: [
-        // ==================== ORS CHAPTERS ====================
+        // ==================== LVV STANDARDS (Official Numbers) ====================
         {
-            id: 'ors-main',
-            title: 'Operating Requirements Schedule (Complete)',
-            description: 'The complete ORS document - the day-to-day rules of the game for the LVV certification system. Governs all operational and procedural requirements.',
-            category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule.pdf',
-            keywords: ['ORS', 'requirements', 'operations', 'procedures', 'rules', 'governance'],
+            id: 'std-35-00',
+            title: 'LVV Standard 35-00(02) - Braking Systems',
+            description: 'Requirements for braking system modifications and installations. Covers hydraulic systems, components, and performance requirements.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-35-00-braking-systems.pdf',
+            keywords: ['brakes', 'braking', 'hydraulic', 'master cylinder', 'disc', 'drum', '35-00'],
             difficulty: 'essential',
             priority: 1,
-            summary: 'The ORS is the central document governing all LVV certification operations. It details procedural requirements, certifier obligations, and system rules.'
+            year: 2016,
+            summary: 'Core braking standard - covers all brake modifications. Essential for any brake-related certification work.'
+        },
+        {
+            id: 'std-40-00',
+            title: 'LVV Standard 40-00(00) - Chassis Modification & Construction',
+            description: 'Requirements for chassis modifications including structural changes, material specifications, and construction methods.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-40-00-chassis-modification-construction.pdf',
+            keywords: ['chassis', 'frame', 'structure', 'welding', 'construction', '40-00'],
+            difficulty: 'essential',
+            priority: 2,
+            year: 2021,
+            summary: 'Critical structural standard - covers all chassis work. Updated 2021 with new requirements.'
+        },
+        {
+            id: 'std-45-30',
+            title: 'LVV Standard 45-30(05) - Disability Adaptive Control Systems',
+            description: 'Requirements for hand controls, pedal modifications, and other adaptive driving controls for people with disabilities.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-45-30-disability-adaptive-control-systems.pdf',
+            keywords: ['disability', 'adaptive', 'hand controls', 'pedal', 'accessible', '45-30'],
+            difficulty: 'specialist',
+            priority: 3,
+            year: 2016,
+            summary: 'Specialist standard for disability vehicle modifications - hand controls, pedal extensions, etc.'
+        },
+        {
+            id: 'std-45-60',
+            title: 'LVV Standard 45-60(02) - Disability Transportation Systems',
+            description: 'Requirements for wheelchair accessible vehicles, restraint systems, and passenger transportation for people with disabilities.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-45-60-disability-transportation-systems.pdf',
+            keywords: ['disability', 'wheelchair', 'transportation', 'restraint', 'accessible', '45-60'],
+            difficulty: 'specialist',
+            priority: 4,
+            year: 2016,
+            summary: 'Wheelchair vehicle conversions, ramps, lifts, and restraint systems.'
+        },
+        {
+            id: 'std-75-00',
+            title: 'LVV Standard 75-00(01) - Electric & Hybrid Vehicles',
+            description: 'Requirements for electric vehicle conversions and hybrid vehicle modifications including battery systems, motors, and safety.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-75-00-electric-hybrid-vehicles.pdf',
+            keywords: ['electric', 'EV', 'hybrid', 'battery', 'motor', 'conversion', '75-00'],
+            difficulty: 'specialist',
+            priority: 5,
+            year: 2013,
+            summary: 'EV conversion requirements - batteries, motors, charging, safety isolation. Growing importance.'
+        },
+        {
+            id: 'std-85-40',
+            title: 'LVV Standard 85-40(04) - Engine & Drive-train Conversions',
+            description: 'Requirements for engine swaps, transmission changes, and drivetrain modifications.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-85-40-engine-drivetrain-conversions.pdf',
+            keywords: ['engine', 'swap', 'conversion', 'drivetrain', 'transmission', 'gearbox', '85-40'],
+            difficulty: 'essential',
+            priority: 6,
+            year: 2021,
+            summary: 'Core standard for engine swaps - covers mounting, cooling, exhaust, drivetrain integration. Updated 2021.'
+        },
+        {
+            id: 'std-90-10',
+            title: 'LVV Standard 90-10(03) - Exhaust Gas Emissions',
+            description: 'Requirements for exhaust gas emissions compliance on modified vehicles.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-90-10-exhaust-gas-emissions.pdf',
+            keywords: ['emissions', 'exhaust', 'gas', 'pollution', 'catalyst', '90-10'],
+            difficulty: 'intermediate',
+            priority: 7,
+            year: 2016,
+            summary: 'Emission requirements for modified vehicles - particularly engine conversions.'
+        },
+        {
+            id: 'std-90-20',
+            title: 'LVV Standard 90-20(06) - Exhaust Noise Emissions',
+            description: 'Requirements for exhaust noise levels including testing procedures and limits.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-90-20-exhaust-noise-emissions.pdf',
+            keywords: ['noise', 'exhaust', 'decibels', 'sound', 'muffler', '90-20'],
+            difficulty: 'intermediate',
+            priority: 8,
+            year: 2025,
+            summary: 'Exhaust noise limits and testing procedures. Updated 2025 with new testing requirements.'
+        },
+        {
+            id: 'std-100-30',
+            title: 'LVV Standard 100-30(02) - External Projections',
+            description: 'Requirements for external projections, body modifications, and pedestrian safety.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-100-30-external-projections.pdf',
+            keywords: ['external', 'projections', 'body', 'pedestrian', 'safety', '100-30'],
+            difficulty: 'intermediate',
+            priority: 9,
+            year: 2016,
+            summary: 'Body modifications affecting external projections - bonnets, guards, accessories.'
+        },
+        {
+            id: 'std-105-00',
+            title: 'LVV Standard 105-00(00) - Fuel Systems',
+            description: 'Requirements for fuel system modifications including tanks, lines, and safety.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-105-00-fuel-systems.pdf',
+            keywords: ['fuel', 'tank', 'fuel cell', 'lines', 'petrol', 'diesel', '105-00'],
+            difficulty: 'essential',
+            priority: 10,
+            year: 2021,
+            summary: 'Fuel system safety requirements - tank location, fuel lines, venting, fire prevention. Updated 2021.'
+        },
+        {
+            id: 'std-125-00',
+            title: 'LVV Standard 125-00(01) - Lighting Equipment',
+            description: 'Requirements for lighting modifications including headlights, indicators, and auxiliary lighting.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-125-00-lighting-equipment.pdf',
+            keywords: ['lighting', 'headlights', 'indicators', 'tail lights', 'LED', '125-00'],
+            difficulty: 'intermediate',
+            priority: 11,
+            year: 2020,
+            summary: 'Lighting requirements - placement, specifications, modifications. Updated 2020.'
+        },
+        {
+            id: 'std-155-20',
+            title: 'LVV Standard 155-20(03) - Door Retention Systems',
+            description: 'Requirements for door hinges, latches, and retention systems.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-155-20-door-retention-systems.pdf',
+            keywords: ['door', 'retention', 'hinges', 'latches', 'safety', '155-20'],
+            difficulty: 'intermediate',
+            priority: 12,
+            year: 2016,
+            summary: 'Door security requirements - hinges, latches, secondary catches.'
+        },
+        {
+            id: 'std-155-30',
+            title: 'LVV Standard 155-30(02) - Frontal Impact',
+            description: 'Requirements for frontal impact protection and occupant safety in collisions.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-155-30-frontal-impact.pdf',
+            keywords: ['frontal', 'impact', 'crash', 'collision', 'safety', '155-30'],
+            difficulty: 'advanced',
+            priority: 13,
+            year: 2016,
+            summary: 'Frontal crash protection requirements for modified vehicles.'
+        },
+        {
+            id: 'std-155-40',
+            title: 'LVV Standard 155-40(02) - Interior Impact',
+            description: 'Requirements for interior impact protection including padding and energy absorption.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-155-40-interior-impact.pdf',
+            keywords: ['interior', 'impact', 'padding', 'dashboard', 'safety', '155-40'],
+            difficulty: 'advanced',
+            priority: 14,
+            year: 2016,
+            summary: 'Interior safety requirements - dashboard, steering wheel, padding.'
+        },
+        {
+            id: 'std-175-00',
+            title: 'LVV Standard 175-00(03) - Seatbelt Anchorages',
+            description: 'Requirements for seatbelt mounting points, strength, and positioning.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-175-00-seatbelt-anchorages.pdf',
+            keywords: ['seatbelt', 'anchorage', 'mounting', 'harness', 'restraint', '175-00'],
+            difficulty: 'essential',
+            priority: 15,
+            year: 2016,
+            summary: 'Critical safety standard - seatbelt mounting requirements, load paths, materials.'
+        },
+        {
+            id: 'std-185-00',
+            title: 'LVV Standard 185-00(03) - Seats & Seat Anchorages',
+            description: 'Requirements for seats and their mounting including strength and adjustment.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-185-00-seats-seat-anchorages.pdf',
+            keywords: ['seats', 'anchorage', 'mounting', 'racing seat', 'adjustment', '185-00'],
+            difficulty: 'essential',
+            priority: 16,
+            year: 2016,
+            summary: 'Seat installation requirements - mounting strength, adjustment, racing seats.'
+        },
+        {
+            id: 'std-185-40',
+            title: 'LVV Standard 185-40(02) - Head Restraints',
+            description: 'Requirements for head restraints including dimensions and positioning.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-185-40-head-restraints.pdf',
+            keywords: ['head restraint', 'headrest', 'whiplash', 'safety', '185-40'],
+            difficulty: 'intermediate',
+            priority: 17,
+            year: 2016,
+            summary: 'Head restraint requirements for occupant protection.'
+        },
+        {
+            id: 'std-190-70',
+            title: 'LVV Standard 190-70(03) - Right-Hand Drive Conversions',
+            description: 'Requirements for converting left-hand drive vehicles to right-hand drive.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-190-70-rhd-conversions.pdf',
+            keywords: ['RHD', 'right hand drive', 'conversion', 'steering', 'import', '190-70'],
+            difficulty: 'specialist',
+            priority: 18,
+            year: 2016,
+            summary: 'RHD conversion requirements - steering, pedals, instruments, compliance.'
+        },
+        {
+            id: 'std-195-00',
+            title: 'LVV Standard 195-00(02) - Suspension Systems',
+            description: 'Requirements for suspension modifications including lowering, lifting, and component changes.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-195-00-suspension-systems.pdf',
+            keywords: ['suspension', 'lowering', 'lifting', 'coilover', 'airbag', 'springs', '195-00'],
+            difficulty: 'essential',
+            priority: 19,
+            year: 2016,
+            summary: 'Core suspension standard - lowering, lifting, component changes. Most common certification area.'
+        },
+        {
+            id: 'std-200-30',
+            title: 'LVV Standard 200-30(01) - Rear View Mirrors',
+            description: 'Requirements for rear view mirror positioning and specifications.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-200-30-rear-view-mirrors.pdf',
+            keywords: ['mirrors', 'rear view', 'vision', 'visibility', '200-30'],
+            difficulty: 'beginner',
+            priority: 20,
+            year: 2018,
+            summary: 'Mirror requirements - positioning, field of view, specifications.'
+        },
+        {
+            id: 'std-205-00',
+            title: 'LVV Standard 205-00(03) - Wheels & Tyres',
+            description: 'Requirements for non-standard wheels and tyres including fitment and specifications.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standard-205-00-wheels-tyres.pdf',
+            keywords: ['wheels', 'tyres', 'offset', 'PCD', 'load rating', 'fitment', '205-00'],
+            difficulty: 'essential',
+            priority: 21,
+            year: 2021,
+            summary: 'Wheel and tyre requirements - fitment, offset, load ratings. Updated 2021.'
+        },
+        {
+            id: 'std-trike-formset',
+            title: 'Trikes with Motorcycle Controls - Formsets Guide',
+            description: 'Guidance document for trikes and motorcycles until specific LVV Standards are developed.',
+            category: 'STANDARDS',
+            url: 'standards/trikes-motorcycle-controls-formsets.pdf',
+            keywords: ['trike', 'motorcycle', 'three wheel', 'formset'],
+            difficulty: 'specialist',
+            priority: 22,
+            summary: 'Interim guide for trike certification until full standards developed.'
+        },
+        {
+            id: 'std-index-vol2',
+            title: 'LVV Standards Index - Volume 2',
+            description: 'Index of LVV Standards Volume 2.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standards-index-vol2.pdf',
+            keywords: ['index', 'standards', 'reference'],
+            difficulty: 'reference',
+            priority: 98,
+            summary: 'Quick reference index to find the right standard.'
+        },
+        {
+            id: 'std-index-vol3',
+            title: 'LVV Standards Index - Volume 3',
+            description: 'Index of LVV Standards Volume 3.',
+            category: 'STANDARDS',
+            url: 'standards/lvv-standards-index-vol3.pdf',
+            keywords: ['index', 'standards', 'reference'],
+            difficulty: 'reference',
+            priority: 99,
+            summary: 'Quick reference index to find the right standard.'
+        },
+
+        // ==================== MOTORCYCLE STANDARDS (145 Series) ====================
+        {
+            id: 'moto-145-15',
+            title: 'LVV Standard 145-15(00) - Frame Modification & Construction - Motorcycles',
+            description: 'Requirements for motorcycle frame modifications and scratch-built motorcycle frames.',
+            category: 'MOTO_STANDARDS',
+            url: 'standards/lvv-standard-145-15-frame-modification-construction-motorcycles.pdf',
+            keywords: ['motorcycle', 'frame', 'chassis', 'construction', '145-15'],
+            difficulty: 'specialist',
+            priority: 1,
+            year: 2026,
+            summary: 'NEW 2026 - Motorcycle frame modification and construction requirements.'
+        },
+        {
+            id: 'moto-145-35',
+            title: 'LVV Standard 145-35(00) - Engine & Drive-train - Motorcycles',
+            description: 'Requirements for motorcycle engine swaps and drivetrain modifications.',
+            category: 'MOTO_STANDARDS',
+            url: 'standards/lvv-standard-145-35-engine-drivetrain-motorcycles.pdf',
+            keywords: ['motorcycle', 'engine', 'drivetrain', 'swap', '145-35'],
+            difficulty: 'specialist',
+            priority: 2,
+            year: 2026,
+            summary: 'NEW 2026 - Motorcycle engine and drivetrain conversion requirements.'
+        },
+        {
+            id: 'moto-145-40',
+            title: 'LVV Standard 145-40(00) - Fuel Systems - Motorcycles',
+            description: 'Requirements for motorcycle fuel system modifications.',
+            category: 'MOTO_STANDARDS',
+            url: 'standards/lvv-standard-145-40-fuel-systems-motorcycles.pdf',
+            keywords: ['motorcycle', 'fuel', 'tank', 'system', '145-40'],
+            difficulty: 'specialist',
+            priority: 3,
+            year: 2026,
+            summary: 'NEW 2026 - Motorcycle fuel system requirements.'
+        },
+        {
+            id: 'moto-145-45',
+            title: 'LVV Standard 145-45(00) - Exhaust Noise Emissions - Motorcycles',
+            description: 'Requirements for motorcycle exhaust noise levels and testing.',
+            category: 'MOTO_STANDARDS',
+            url: 'standards/lvv-standard-145-45-exhaust-noise-motorcycles.pdf',
+            keywords: ['motorcycle', 'exhaust', 'noise', 'emissions', '145-45'],
+            difficulty: 'specialist',
+            priority: 4,
+            year: 2025,
+            summary: 'NEW 2025 - Motorcycle exhaust noise requirements and testing.'
+        },
+        {
+            id: 'moto-145-55',
+            title: 'LVV Standard 145-55(00) - Body Modification & Construction - Motorcycles',
+            description: 'Requirements for motorcycle body and bodywork modifications.',
+            category: 'MOTO_STANDARDS',
+            url: 'standards/lvv-standard-145-55-body-modification-motorcycles.pdf',
+            keywords: ['motorcycle', 'body', 'bodywork', 'fairing', '145-55'],
+            difficulty: 'specialist',
+            priority: 5,
+            year: 2026,
+            summary: 'NEW 2026 - Motorcycle body modification requirements.'
+        },
+        {
+            id: 'moto-145-60',
+            title: 'LVV Standard 145-60(00) - Seating - Motorcycles',
+            description: 'Requirements for motorcycle seating modifications.',
+            category: 'MOTO_STANDARDS',
+            url: 'standards/lvv-standard-145-60-seating-motorcycles.pdf',
+            keywords: ['motorcycle', 'seat', 'seating', 'pillion', '145-60'],
+            difficulty: 'specialist',
+            priority: 6,
+            year: 2026,
+            summary: 'NEW 2026 - Motorcycle seating requirements.'
+        },
+        {
+            id: 'moto-145-65',
+            title: 'LVV Standard 145-65(00) - Glazing & Vision - Motorcycles',
+            description: 'Requirements for motorcycle windscreens and visibility.',
+            category: 'MOTO_STANDARDS',
+            url: 'standards/lvv-standard-145-65-glazing-vision-motorcycles.pdf',
+            keywords: ['motorcycle', 'glazing', 'windscreen', 'vision', '145-65'],
+            difficulty: 'specialist',
+            priority: 7,
+            year: 2026,
+            summary: 'NEW 2026 - Motorcycle glazing and vision requirements.'
+        },
+
+        // ==================== CERTIFICATION THRESHOLDS ====================
+        {
+            id: 'threshold-guide',
+            title: 'LVV Certification Threshold Guide',
+            description: 'Defines WHEN LVV certification is required. Three groups: Always required, Sometimes required (threshold-dependent), Never required.',
+            category: 'THRESHOLD',
+            url: 'certification-threshold/lvvta-certification-threshold-guide.pdf',
+            keywords: ['threshold', 'when required', 'modification level', 'groups', 'required'],
+            difficulty: 'essential',
+            priority: 1,
+            summary: 'CRITICAL: Tells you when certification IS and IS NOT required. Group 1=Always, Group 2=If exceeds threshold, Group 3=Never.'
+        },
+        {
+            id: 'threshold-index',
+            title: 'Certification Threshold Index',
+            description: 'Index to quickly find threshold requirements for specific modifications.',
+            category: 'THRESHOLD',
+            url: 'certification-threshold/certification-threshold-index.pdf',
+            keywords: ['threshold', 'index', 'quick reference'],
+            difficulty: 'essential',
+            priority: 2,
+            summary: 'Quick lookup for modification thresholds.'
+        },
+
+        // ==================== NZ CAR CONSTRUCTION MANUAL (Complete) ====================
+        {
+            id: 'nzccm-full',
+            title: 'NZ Car Construction Manual (Complete Download)',
+            description: 'The complete NZ Car Construction Manual - FREE electronic download. Comprehensive guide for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/nz-car-construction-manual-complete.pdf',
+            keywords: ['NZCCM', 'complete', 'full', 'construction', 'scratch-built'],
+            difficulty: 'essential',
+            priority: 1,
+            summary: 'The complete manual - download the whole thing for comprehensive reference.'
+        },
+        {
+            id: 'nzccm-ch1',
+            title: 'NZCCM Chapter 1 - Low Volume Vehicle System',
+            description: 'Introduction to the LVV system and how it applies to scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-1-low-volume-vehicle-system.pdf',
+            keywords: ['LVV system', 'introduction', 'overview'],
+            difficulty: 'beginner',
+            priority: 2,
+            summary: 'Overview of the LVV system for builders.'
+        },
+        {
+            id: 'nzccm-ch2',
+            title: 'NZCCM Chapter 2 - About This Manual',
+            description: 'How to use the NZ Car Construction Manual effectively.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-2-about-this-manual.pdf',
+            keywords: ['manual', 'how to use', 'guide'],
+            difficulty: 'beginner',
+            priority: 3,
+            summary: 'Start here - explains how to navigate and use the manual.'
+        },
+        {
+            id: 'nzccm-ch3',
+            title: 'NZCCM Chapter 3 - Authority Card Process',
+            description: 'The authority card approval process for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-3-authority-card-process.pdf',
+            keywords: ['authority card', 'approval', 'process', 'administration'],
+            difficulty: 'intermediate',
+            priority: 4,
+            summary: 'How to get authority card approval for a scratch-built vehicle.'
+        },
+        {
+            id: 'nzccm-ch4',
+            title: 'NZCCM Chapter 4 - Build Approval Process',
+            description: 'The build approval process and requirements for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-4-build-approval-process.pdf',
+            keywords: ['build approval', 'process', 'requirements'],
+            difficulty: 'intermediate',
+            priority: 5,
+            summary: 'Getting your build approved - the step-by-step process.'
+        },
+        {
+            id: 'nzccm-ch5',
+            title: 'NZCCM Chapter 5 - Chassis Modification & Construction',
+            description: 'Comprehensive chassis design, modification, and construction requirements.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-5-chassis-modification-construction.pdf',
+            keywords: ['chassis', 'frame', 'construction', 'welding', 'structure', 'materials'],
+            difficulty: 'advanced',
+            priority: 6,
+            summary: 'CRITICAL chapter - chassis types, materials, welding, structural calculations.'
+        },
+        {
+            id: 'nzccm-ch6',
+            title: 'NZCCM Chapter 6 - Suspension Systems',
+            description: 'Suspension design and construction for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-6-suspension-systems.pdf',
+            keywords: ['suspension', 'springs', 'dampers', 'geometry', 'IFS', 'IRS'],
+            difficulty: 'advanced',
+            priority: 7,
+            summary: 'Suspension design principles, geometry, and component requirements.'
+        },
+        {
+            id: 'nzccm-ch7',
+            title: 'NZCCM Chapter 7 - Steering Systems',
+            description: 'Steering system design and requirements for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-7-steering-systems.pdf',
+            keywords: ['steering', 'rack', 'geometry', 'ackerman', 'column'],
+            difficulty: 'advanced',
+            priority: 8,
+            summary: 'Steering geometry, component selection, and safety requirements.'
+        },
+        {
+            id: 'nzccm-ch8',
+            title: 'NZCCM Chapter 8 - Braking Systems',
+            description: 'Brake system design and requirements for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-8-braking-systems.pdf',
+            keywords: ['brakes', 'hydraulic', 'master cylinder', 'disc', 'drum', 'pedal ratio'],
+            difficulty: 'advanced',
+            priority: 9,
+            summary: 'CRITICAL safety chapter - brake design, calculations, components.'
+        },
+        {
+            id: 'nzccm-ch9',
+            title: 'NZCCM Chapter 9 - Engine & Drive-train',
+            description: 'Engine installation and drivetrain requirements.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-9-engine-drivetrain.pdf',
+            keywords: ['engine', 'drivetrain', 'transmission', 'driveshaft', 'cooling', 'mounting'],
+            difficulty: 'advanced',
+            priority: 10,
+            summary: 'Engine mounting, drivetrain layout, cooling systems, driveshaft requirements.'
+        },
+        {
+            id: 'nzccm-ch10',
+            title: 'NZCCM Chapter 10 - Fuel Systems',
+            description: 'Fuel system design and safety requirements.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-10-fuel-systems.pdf',
+            keywords: ['fuel', 'tank', 'lines', 'safety', 'venting', 'fire'],
+            difficulty: 'advanced',
+            priority: 11,
+            summary: 'Fuel system safety - tank location, lines, venting, fire prevention.'
+        },
+        {
+            id: 'nzccm-ch11',
+            title: 'NZCCM Chapter 11 - Emission Systems Part 1 - Exhaust Noise',
+            description: 'Exhaust noise requirements and compliance.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-11-emission-systems-exhaust-noise.pdf',
+            keywords: ['exhaust', 'noise', 'emissions', 'muffler', 'decibels'],
+            difficulty: 'intermediate',
+            priority: 12,
+            summary: 'Exhaust noise limits and compliance methods.'
+        },
+        {
+            id: 'nzccm-ch12',
+            title: 'NZCCM Chapter 12 - Wheels and Tyres',
+            description: 'Wheel and tyre requirements for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-12-wheels-tyres.pdf',
+            keywords: ['wheels', 'tyres', 'hubs', 'PCD', 'offset', 'load rating'],
+            difficulty: 'intermediate',
+            priority: 13,
+            summary: 'Wheel and tyre specifications, hub requirements.'
+        },
+        {
+            id: 'nzccm-ch13',
+            title: 'NZCCM Chapter 13 - Body Modification & Construction',
+            description: 'Body construction requirements for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-13-body-modification-construction.pdf',
+            keywords: ['body', 'bodywork', 'panels', 'fibreglass', 'guards'],
+            difficulty: 'intermediate',
+            priority: 14,
+            summary: 'Body construction, materials, mounting requirements.'
+        },
+        {
+            id: 'nzccm-ch14',
+            title: 'NZCCM Chapter 14 - Seats, Seatbelts & Anchorages',
+            description: 'Seating and restraint system requirements.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-14-seats-seatbelts-anchorages.pdf',
+            keywords: ['seats', 'seatbelts', 'anchorage', 'harness', 'restraint'],
+            difficulty: 'essential',
+            priority: 15,
+            summary: 'CRITICAL safety - seating and seatbelt mounting requirements.'
+        },
+        {
+            id: 'nzccm-ch15',
+            title: 'NZCCM Chapter 15 - Glazing & Vision',
+            description: 'Windscreen and glazing requirements.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-15-glazing-vision.pdf',
+            keywords: ['glazing', 'windscreen', 'glass', 'visibility', 'mirrors'],
+            difficulty: 'intermediate',
+            priority: 16,
+            summary: 'Windscreen, glazing, mirror, and visibility requirements.'
+        },
+        {
+            id: 'nzccm-ch16',
+            title: 'NZCCM Chapter 16 - Interior Equipment',
+            description: 'Interior equipment and safety requirements.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-16-interior-equipment.pdf',
+            keywords: ['interior', 'dashboard', 'controls', 'padding', 'safety'],
+            difficulty: 'intermediate',
+            priority: 17,
+            summary: 'Interior safety, padding, control placement.'
+        },
+        {
+            id: 'nzccm-ch17',
+            title: 'NZCCM Chapter 17 - Lighting Equipment',
+            description: 'Lighting system requirements for scratch-built vehicles.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-17-lighting-equipment.pdf',
+            keywords: ['lighting', 'headlights', 'indicators', 'tail lights'],
+            difficulty: 'intermediate',
+            priority: 18,
+            summary: 'Lighting placement, specifications, legal requirements.'
+        },
+        {
+            id: 'nzccm-ch18',
+            title: 'NZCCM Chapter 18 - Attachment Systems',
+            description: 'Attachment and fastening system requirements.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-18-attachment-systems.pdf',
+            keywords: ['attachment', 'fasteners', 'bolts', 'mounting'],
+            difficulty: 'intermediate',
+            priority: 19,
+            summary: 'Fastener specifications and attachment requirements.'
+        },
+        {
+            id: 'nzccm-ch19',
+            title: 'NZCCM Chapter 19 - Vehicle Operation',
+            description: 'Operational requirements and final vehicle checks.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/chapter-19-vehicle-operation.pdf',
+            keywords: ['operation', 'testing', 'final checks', 'commissioning'],
+            difficulty: 'intermediate',
+            priority: 20,
+            summary: 'Final operational checks and commissioning procedures.'
+        },
+        {
+            id: 'nzccm-intro',
+            title: 'NZCCM Introduction',
+            description: 'Introduction section of the NZ Car Construction Manual.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/introduction.pdf',
+            keywords: ['introduction', 'overview'],
+            difficulty: 'beginner',
+            priority: 21,
+            summary: 'Introduction to the manual.'
+        },
+        {
+            id: 'nzccm-terms',
+            title: 'NZCCM Terms and Definitions',
+            description: 'Technical terminology and definitions used throughout the manual.',
+            category: 'NZCCM',
+            url: 'nz-car-construction-manual/terms-and-definitions.pdf',
+            keywords: ['terms', 'definitions', 'glossary', 'terminology'],
+            difficulty: 'beginner',
+            priority: 22,
+            summary: 'Essential glossary - understand the technical language.'
+        },
+
+        // ==================== NZ MOTORCYCLE CONSTRUCTION MANUAL ====================
+        {
+            id: 'nzmcm-ch5',
+            title: 'NZMCM Chapter 5 - Frame Modification & Construction - Motorcycles',
+            description: 'Frame construction requirements for scratch-built motorcycles.',
+            category: 'NZMCM',
+            url: 'nz-motorcycle-construction-manual/chapter-5-frame-modification-construction-motorcycles.pdf',
+            keywords: ['motorcycle', 'frame', 'construction', 'chassis'],
+            difficulty: 'specialist',
+            priority: 1,
+            summary: 'Motorcycle frame construction requirements.'
+        },
+        {
+            id: 'nzmcm-ch9',
+            title: 'NZMCM Chapter 9 - Engine & Drive-train - Motorcycles',
+            description: 'Engine and drivetrain requirements for motorcycles.',
+            category: 'NZMCM',
+            url: 'nz-motorcycle-construction-manual/chapter-9-engine-drivetrain-motorcycles.pdf',
+            keywords: ['motorcycle', 'engine', 'drivetrain', 'chain', 'belt'],
+            difficulty: 'specialist',
+            priority: 2,
+            summary: 'Motorcycle engine and drivetrain requirements.'
+        },
+        {
+            id: 'nzmcm-ch10',
+            title: 'NZMCM Chapter 10 - Fuel Systems - Motorcycles',
+            description: 'Fuel system requirements for motorcycles.',
+            category: 'NZMCM',
+            url: 'nz-motorcycle-construction-manual/chapter-10-fuel-systems-motorcycles.pdf',
+            keywords: ['motorcycle', 'fuel', 'tank', 'system'],
+            difficulty: 'specialist',
+            priority: 3,
+            summary: 'Motorcycle fuel system requirements.'
+        },
+        {
+            id: 'nzmcm-ch11',
+            title: 'NZMCM Chapter 11 - Emission Systems Part 1 - Noise - Motorcycles',
+            description: 'Exhaust noise requirements for motorcycles.',
+            category: 'NZMCM',
+            url: 'nz-motorcycle-construction-manual/chapter-11-emission-systems-noise-motorcycles.pdf',
+            keywords: ['motorcycle', 'exhaust', 'noise', 'emissions'],
+            difficulty: 'specialist',
+            priority: 4,
+            summary: 'Motorcycle exhaust noise requirements.'
+        },
+        {
+            id: 'nzmcm-ch13',
+            title: 'NZMCM Chapter 13 - Body Modification & Construction - Motorcycles',
+            description: 'Body and fairing requirements for motorcycles.',
+            category: 'NZMCM',
+            url: 'nz-motorcycle-construction-manual/chapter-13-body-modification-construction-motorcycles.pdf',
+            keywords: ['motorcycle', 'body', 'fairing', 'bodywork'],
+            difficulty: 'specialist',
+            priority: 5,
+            summary: 'Motorcycle body and fairing requirements.'
+        },
+        {
+            id: 'nzmcm-ch14',
+            title: 'NZMCM Chapter 14 - Seating - Motorcycles',
+            description: 'Seating requirements for motorcycles.',
+            category: 'NZMCM',
+            url: 'nz-motorcycle-construction-manual/chapter-14-seating-motorcycles.pdf',
+            keywords: ['motorcycle', 'seat', 'seating', 'pillion'],
+            difficulty: 'specialist',
+            priority: 6,
+            summary: 'Motorcycle seating requirements.'
+        },
+        {
+            id: 'nzmcm-ch15',
+            title: 'NZMCM Chapter 15 - Glazing & Vision - Motorcycles',
+            description: 'Windscreen and vision requirements for motorcycles.',
+            category: 'NZMCM',
+            url: 'nz-motorcycle-construction-manual/chapter-15-glazing-vision-motorcycles.pdf',
+            keywords: ['motorcycle', 'windscreen', 'glazing', 'vision'],
+            difficulty: 'specialist',
+            priority: 7,
+            summary: 'Motorcycle glazing and vision requirements.'
+        },
+
+        // ==================== OPERATING REQUIREMENTS SCHEDULE ====================
+        {
+            id: 'ors-main',
+            title: 'Operating Requirements Schedule (Main Document)',
+            description: 'The main ORS document - operational and procedural rules for LVV certification. NOTE: Being updated in chapters.',
+            category: 'ORS',
+            url: 'operating-requirements-schedule/operating-requirements-schedule.pdf',
+            keywords: ['ORS', 'operations', 'procedures', 'rules'],
+            difficulty: 'essential',
+            priority: 1,
+            summary: 'Main ORS document - refer to individual chapters for latest versions.'
         },
         {
             id: 'ors-ch1',
-            title: 'ORS Chapter 1 - Introduction & Definitions',
-            description: 'Introduction to the Operating Requirements Schedule and key definitions used throughout the LVV certification system.',
+            title: 'ORS Chapter 1 - Background to LVV Certification System',
+            description: 'Background and history of the LVV certification system.',
             category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_1_Introduction_and_Definitions.pdf',
-            keywords: ['introduction', 'definitions', 'terminology', 'glossary'],
+            url: 'operating-requirements-schedule/chapter-1-background-lvv-certification-system.pdf',
+            keywords: ['background', 'history', 'introduction'],
             difficulty: 'beginner',
             priority: 2,
-            summary: 'Defines all terminology used in LVV certification. Essential reading before other chapters.'
+            summary: 'History and background of the LVV system.'
         },
         {
             id: 'ors-ch2',
-            title: 'ORS Chapter 2 - Low Volume Vehicle Classifications',
-            description: 'Defines vehicle classifications including modified vehicles, scratch-built vehicles, historic replicas, and reproductions.',
+            title: 'ORS Chapter 2 - Vehicle Classifications',
+            description: 'Definitions and classifications of low volume vehicles.',
             category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_2_Low_Volume_Vehicle_Classifications.pdf',
-            keywords: ['classifications', 'modified', 'scratch-built', 'replica', 'reproduction', 'vehicle types'],
+            url: 'operating-requirements-schedule/chapter-2-vehicle-classifications.pdf',
+            keywords: ['classifications', 'modified', 'scratch-built', 'replica', 'reproduction'],
             difficulty: 'essential',
             priority: 3,
-            summary: 'Critical chapter defining what constitutes different types of low volume vehicles. A scratch-built reproduction requires more compliance than a historic replica.'
+            summary: 'CRITICAL: Defines Modified, Scratch-built, Historic Replica, Reproduction.'
         },
         {
             id: 'ors-ch3',
-            title: 'ORS Chapter 3 - LVV Certification Categories',
-            description: 'Details the different categories of LVV Certifier appointments: General Motor Vehicles, Heavy Vehicles, Off-road & Non-transport (ONT), and specialist categories.',
+            title: 'ORS Chapter 3 - Certification Categories',
+            description: 'LVV Certifier appointment categories - GMV, Heavy, ONT, Specialist.',
             category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_3_LVV_Certification_Categories.pdf',
-            keywords: ['categories', 'certifier types', 'GMV', 'heavy vehicles', 'ONT', 'specialist', 'appointment'],
+            url: 'operating-requirements-schedule/chapter-3-certification-categories.pdf',
+            keywords: ['categories', 'GMV', 'heavy', 'ONT', 'specialist', 'appointment'],
             difficulty: 'essential',
             priority: 4,
-            summary: 'Explains the different types of certifier appointments and what each category covers.'
+            summary: 'Certifier categories - what each category can certify.'
         },
         {
             id: 'ors-ch4',
-            title: 'ORS Chapter 4 - LVV Certifier Background Criteria',
-            description: 'Requirements for becoming an LVV Certifier including qualifications, experience, personal attributes, and ongoing requirements.',
+            title: 'ORS Chapter 4 - Certifier Background Criteria',
+            description: 'Requirements to become an LVV Certifier - qualifications, experience, attributes.',
             category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_4_LVV_Certifier_Background_Criteria.pdf',
-            keywords: ['qualifications', 'experience', 'requirements', 'criteria', 'background', 'attributes', 'integrity'],
+            url: 'operating-requirements-schedule/chapter-4-certifier-background-criteria.pdf',
+            keywords: ['qualifications', 'experience', 'criteria', 'requirements', 'attributes'],
             difficulty: 'essential',
             priority: 5,
-            summary: 'Defines what qualifications and experience you need to become an LVV Certifier. Includes personal attribute requirements.'
+            summary: 'ESSENTIAL: What you need to become a certifier - quals, experience, integrity.'
         },
         {
             id: 'ors-ch5',
-            title: 'ORS Chapter 5 - LVV Certifier Application & Appointment',
-            description: 'The application process for becoming an LVV Certifier, assessment procedures, and conditions of appointment.',
+            title: 'ORS Chapter 5 - Certifier Application & Appointment',
+            description: 'The application and appointment process for LVV Certifiers.',
             category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_5_LVV_Certifier_Application_and_Appointment.pdf',
-            keywords: ['application', 'appointment', 'process', 'assessment', 'training'],
+            url: 'operating-requirements-schedule/chapter-5-certifier-application-appointment.pdf',
+            keywords: ['application', 'appointment', 'process', 'training'],
             difficulty: 'essential',
             priority: 6,
-            summary: 'Step-by-step guide to applying for and obtaining LVV Certifier appointment.'
+            summary: 'How to apply and get appointed as an LVV Certifier.'
         },
         {
             id: 'ors-ch6',
-            title: 'ORS Chapter 6 - LVV Certifier Obligations',
-            description: 'Ongoing obligations of appointed LVV Certifiers including record keeping, reporting, conduct, and compliance requirements.',
+            title: 'ORS Chapter 6 - Documents, Equipment & Premises',
+            description: 'Requirements for certifier documentation, equipment, and premises.',
             category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_6_LVV_Certifier_Obligations.pdf',
-            keywords: ['obligations', 'duties', 'responsibilities', 'record keeping', 'reporting', 'compliance'],
-            difficulty: 'essential',
-            priority: 7,
-            summary: 'What you must do once appointed as an LVV Certifier. Critical for maintaining your appointment.'
-        },
-        {
-            id: 'ors-ch7',
-            title: 'ORS Chapter 7 - LVV Certification Procedures',
-            description: 'Detailed procedures for conducting LVV certifications including inspections, documentation, and plate issuance.',
-            category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_7_LVV_Certification_Procedures.pdf',
-            keywords: ['procedures', 'inspection', 'documentation', 'plates', 'certification process'],
-            difficulty: 'essential',
-            priority: 8,
-            summary: 'How to actually conduct an LVV certification from start to finish.'
-        },
-        {
-            id: 'ors-ch8',
-            title: 'ORS Chapter 8 - LVV Certification Plates & Labels',
-            description: 'Requirements for LVV certification plates and labels including types, application, and record keeping.',
-            category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_8_LVV_Certification_Plates_and_Labels.pdf',
-            keywords: ['plates', 'labels', 'identification', 'records'],
+            url: 'operating-requirements-schedule/chapter-6-documents-equipment-premises.pdf',
+            keywords: ['documents', 'equipment', 'premises', 'tools'],
             difficulty: 'intermediate',
-            priority: 9,
-            summary: 'All about the physical certification plates and labels - types, when to use them, and requirements.'
+            priority: 7,
+            summary: 'What documents, equipment, and facilities a certifier needs.'
         },
         {
             id: 'ors-ch9',
-            title: 'ORS Chapter 9 - Fees & Financial Requirements',
-            description: 'Fee structures and financial requirements for LVV certification.',
+            title: 'ORS Chapter 9 - Submission of Certification Files',
+            description: 'How to submit certification files to LVVTA.',
             category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_9_Fees_and_Financial_Requirements.pdf',
-            keywords: ['fees', 'costs', 'financial', 'payments'],
+            url: 'operating-requirements-schedule/chapter-9-submission-certification-files.pdf',
+            keywords: ['submission', 'files', 'documentation', 'process'],
             difficulty: 'intermediate',
-            priority: 10,
-            summary: 'Understanding the fee structure for LVV certification services.'
+            priority: 8,
+            summary: 'File submission procedures and requirements.'
         },
         {
             id: 'ors-ch10',
-            title: 'ORS Chapter 10 - Complaints & Disciplinary Procedures',
-            description: 'Procedures for handling complaints against certifiers and disciplinary processes.',
+            title: 'ORS Chapter 10 - File Review System',
+            description: 'How LVVTA reviews certification files.',
             category: 'ORS',
-            url: 'operating_requirements_schedule/LVVTA_Operating_Requirements_Schedule_Chapter_10_Complaints_and_Disciplinary_Procedures.pdf',
-            keywords: ['complaints', 'disciplinary', 'conduct', 'appeals'],
+            url: 'operating-requirements-schedule/chapter-10-file-review-system.pdf',
+            keywords: ['review', 'audit', 'quality', 'checking'],
+            difficulty: 'intermediate',
+            priority: 9,
+            summary: 'The file review and quality assurance process.'
+        },
+        {
+            id: 'ors-ch11',
+            title: 'ORS Chapter 11 - Certifier Error Recording & Reporting',
+            description: 'How errors are recorded and reported.',
+            category: 'ORS',
+            url: 'operating-requirements-schedule/chapter-11-certifier-error-recording-reporting.pdf',
+            keywords: ['errors', 'recording', 'reporting', 'mistakes'],
+            difficulty: 'intermediate',
+            priority: 10,
+            summary: 'Error handling and reporting procedures.'
+        },
+        {
+            id: 'ors-ch12',
+            title: 'ORS Chapter 12 - Certification Plates & Labels',
+            description: 'Requirements for LVV certification plates and labels.',
+            category: 'ORS',
+            url: 'operating-requirements-schedule/chapter-12-certification-plates-labels.pdf',
+            keywords: ['plates', 'labels', 'identification', 'EDP'],
             difficulty: 'intermediate',
             priority: 11,
-            summary: 'What happens if something goes wrong - complaint handling and disciplinary procedures.'
+            summary: 'Certification plate types, attachment, and requirements.'
+        },
+        {
+            id: 'ors-ch14',
+            title: 'ORS Chapter 14 - LVVTA Services & Support',
+            description: 'Support services available from LVVTA.',
+            category: 'ORS',
+            url: 'operating-requirements-schedule/chapter-14-lvvta-services-support.pdf',
+            keywords: ['services', 'support', 'help', 'technical'],
+            difficulty: 'beginner',
+            priority: 12,
+            summary: 'What support is available from LVVTA.'
+        },
+        {
+            id: 'ors-ch16',
+            title: 'ORS Chapter 16 - LVVTA-NZTA Co-regulatory Relationship',
+            description: 'The relationship between LVVTA and NZTA/Waka Kotahi.',
+            category: 'ORS',
+            url: 'operating-requirements-schedule/chapter-16-lvvta-nzta-relationship.pdf',
+            keywords: ['NZTA', 'Waka Kotahi', 'regulatory', 'relationship'],
+            difficulty: 'intermediate',
+            priority: 13,
+            summary: 'How LVVTA and NZTA work together.'
+        },
+        {
+            id: 'ors-index',
+            title: 'Operating Requirements Schedule Index',
+            description: 'Index to the ORS document.',
+            category: 'ORS',
+            url: 'operating-requirements-schedule/operating-requirements-schedule-index.pdf',
+            keywords: ['index', 'reference'],
+            difficulty: 'reference',
+            priority: 99,
+            summary: 'Quick reference index for ORS.'
         },
 
         // ==================== LVV CODE ====================
         {
             id: 'lvv-code',
-            title: 'Low Volume Vehicle Code',
-            description: 'The legally empowered code under Land Transport Rule: Vehicle Standards Compliance 2002. The top-level legislative framework for LVV certification.',
+            title: 'The Low Volume Vehicle Code',
+            description: 'The legal framework for the LVV certification system. Empowered by Land Transport Rule 35001/1.',
             category: 'CODE',
-            url: 'lvv_code/LVV_code.pdf',
-            keywords: ['code', 'legal', 'legislation', 'land transport rule', 'compliance'],
+            url: 'lvv-code/the-low-volume-vehicle-code.pdf',
+            keywords: ['code', 'legal', 'legislation', 'framework', 'authority'],
             difficulty: 'essential',
             priority: 1,
-            summary: 'The foundational legal document that gives LVV certification its authority. Must-read for all certifiers.'
-        },
-
-        // ==================== LVV STANDARDS ====================
-        // 100 Series - General
-        {
-            id: 'std-155-01',
-            title: 'LVV Standard 155-01 - Low Volume Vehicle Standards Index',
-            description: 'Complete index of all LVV Standards and their application.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_155-01_(Low_Volume_Vehicle_Standards_Index).pdf',
-            keywords: ['index', 'standards list', 'reference'],
-            difficulty: 'beginner',
-            priority: 1,
-            summary: 'Your guide to finding the right standard for any certification scenario.'
+            summary: 'THE foundational legal document - gives LVV certification its authority.'
         },
         {
-            id: 'std-185-20',
-            title: 'LVV Standard 185-20 - General Safety Requirements',
-            description: 'General safety requirements applicable to all low volume vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_185-20_(General_Safety_Requirements).pdf',
-            keywords: ['safety', 'general requirements', 'baseline'],
-            difficulty: 'essential',
-            priority: 2,
-            summary: 'Baseline safety requirements that apply to all LVV certifications.'
-        },
-
-        // 35 Series - Brakes
-        {
-            id: 'std-35-00',
-            title: 'LVV Standard 35-00 - Brakes Introduction',
-            description: 'Introduction to brake system requirements for low volume vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_35-00_(Brakes_Introduction).pdf',
-            keywords: ['brakes', 'introduction', 'braking systems'],
-            difficulty: 'beginner',
-            priority: 3,
-            summary: 'Overview of brake system requirements and how to apply the 35-series standards.'
-        },
-        {
-            id: 'std-35-10',
-            title: 'LVV Standard 35-10 - Modified Light Vehicle Brakes',
-            description: 'Requirements for brake modifications on light vehicles under 4500kg GVM.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_35-10_(Modified_Light_Vehicle_Brakes).pdf',
-            keywords: ['brakes', 'light vehicles', 'modifications', 'brake upgrades'],
-            difficulty: 'intermediate',
-            priority: 4,
-            summary: 'How to certify brake modifications on cars, utes, and light trucks.'
-        },
-        {
-            id: 'std-35-20',
-            title: 'LVV Standard 35-20 - Scratch-built Light Vehicle Brakes',
-            description: 'Brake system requirements for scratch-built light vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_35-20_(Scratch-built_Light_Vehicle_Brakes).pdf',
-            keywords: ['brakes', 'scratch-built', 'kit cars', 'custom'],
-            difficulty: 'advanced',
-            priority: 5,
-            summary: 'Complete brake system requirements when building a vehicle from scratch.'
-        },
-        {
-            id: 'std-35-40',
-            title: 'LVV Standard 35-40 - Modified Heavy Vehicle Brakes',
-            description: 'Requirements for brake modifications on heavy vehicles over 4500kg GVM.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_35-40_(Modified_Heavy_Vehicle_Brakes).pdf',
-            keywords: ['brakes', 'heavy vehicles', 'trucks', 'buses'],
-            difficulty: 'advanced',
-            priority: 6,
-            summary: 'Brake certification requirements for trucks, buses, and heavy trailers.'
-        },
-
-        // 40 Series - Steering
-        {
-            id: 'std-40-00',
-            title: 'LVV Standard 40-00 - Steering Introduction',
-            description: 'Introduction to steering system requirements.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_40-00_(Steering_Introduction).pdf',
-            keywords: ['steering', 'introduction'],
-            difficulty: 'beginner',
-            priority: 7,
-            summary: 'Overview of steering certification requirements.'
-        },
-        {
-            id: 'std-40-10',
-            title: 'LVV Standard 40-10 - Modified Light Vehicle Steering',
-            description: 'Steering modification requirements for light vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_40-10_(Modified_Light_Vehicle_Steering).pdf',
-            keywords: ['steering', 'modifications', 'steering conversions', 'power steering'],
-            difficulty: 'intermediate',
-            priority: 8,
-            summary: 'How to certify steering modifications including conversions and power steering additions.'
-        },
-        {
-            id: 'std-40-20',
-            title: 'LVV Standard 40-20 - Scratch-built Light Vehicle Steering',
-            description: 'Steering system requirements for scratch-built vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_40-20_(Scratch-built_Light_Vehicle_Steering).pdf',
-            keywords: ['steering', 'scratch-built', 'custom'],
-            difficulty: 'advanced',
-            priority: 9,
-            summary: 'Complete steering system requirements for scratch-built vehicles.'
-        },
-
-        // 45 Series - Suspension
-        {
-            id: 'std-45-00',
-            title: 'LVV Standard 45-00 - Suspension Introduction',
-            description: 'Introduction to suspension system requirements.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_45-00_(Suspension_Introduction).pdf',
-            keywords: ['suspension', 'introduction'],
-            difficulty: 'beginner',
-            priority: 10,
-            summary: 'Overview of suspension certification requirements.'
-        },
-        {
-            id: 'std-45-10',
-            title: 'LVV Standard 45-10 - Modified Light Vehicle Suspension',
-            description: 'Suspension modification requirements including lowering, lifting, and component changes.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_45-10_(Modified_Light_Vehicle_Suspension).pdf',
-            keywords: ['suspension', 'lowering', 'lifting', 'coilovers', 'airbags'],
-            difficulty: 'intermediate',
-            priority: 11,
-            summary: 'How to certify suspension modifications - the most common type of LVV certification.'
-        },
-        {
-            id: 'std-45-20',
-            title: 'LVV Standard 45-20 - Scratch-built Light Vehicle Suspension',
-            description: 'Suspension system requirements for scratch-built vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_45-20_(Scratch-built_Light_Vehicle_Suspension).pdf',
-            keywords: ['suspension', 'scratch-built', 'custom'],
-            difficulty: 'advanced',
-            priority: 12,
-            summary: 'Complete suspension system requirements for scratch-built vehicles.'
-        },
-
-        // 50 Series - Structure
-        {
-            id: 'std-50-00',
-            title: 'LVV Standard 50-00 - Structure Introduction',
-            description: 'Introduction to vehicle structure and chassis requirements.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_50-00_(Structure_Introduction).pdf',
-            keywords: ['structure', 'chassis', 'introduction'],
-            difficulty: 'beginner',
-            priority: 13,
-            summary: 'Overview of structural modification requirements.'
-        },
-        {
-            id: 'std-50-10',
-            title: 'LVV Standard 50-10 - Modified Vehicle Structure',
-            description: 'Requirements for structural modifications including chassis work, roll cages, and body changes.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_50-10_(Modified_Vehicle_Structure).pdf',
-            keywords: ['structure', 'chassis', 'roll cage', 'body', 'modifications'],
-            difficulty: 'intermediate',
-            priority: 14,
-            summary: 'How to certify structural modifications - critical safety area.'
-        },
-        {
-            id: 'std-50-20',
-            title: 'LVV Standard 50-20 - Scratch-built Vehicle Structure',
-            description: 'Structural requirements for scratch-built vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_50-20_(Scratch-built_Vehicle_Structure).pdf',
-            keywords: ['structure', 'scratch-built', 'chassis design'],
-            difficulty: 'advanced',
-            priority: 15,
-            summary: 'Chassis and structure requirements for building vehicles from scratch.'
-        },
-
-        // 55 Series - Wheels & Tyres
-        {
-            id: 'std-55-00',
-            title: 'LVV Standard 55-00 - Wheels & Tyres Introduction',
-            description: 'Introduction to wheel and tyre requirements.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_55-00_(Wheels_and_Tyres_Introduction).pdf',
-            keywords: ['wheels', 'tyres', 'introduction'],
-            difficulty: 'beginner',
-            priority: 16,
-            summary: 'Overview of wheel and tyre certification requirements.'
-        },
-        {
-            id: 'std-55-10',
-            title: 'LVV Standard 55-10 - Modified Light Vehicle Wheels & Tyres',
-            description: 'Requirements for wheel and tyre modifications on light vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_55-10_(Modified_Light_Vehicle_Wheels_and_Tyres).pdf',
-            keywords: ['wheels', 'tyres', 'offset', 'wheel spacers', 'wider wheels'],
-            difficulty: 'intermediate',
-            priority: 17,
-            summary: 'How to certify non-standard wheels and tyres.'
-        },
-
-        // 60 Series - Engine
-        {
-            id: 'std-60-00',
-            title: 'LVV Standard 60-00 - Engine Introduction',
-            description: 'Introduction to engine and drivetrain requirements.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_60-00_(Engine_Introduction).pdf',
-            keywords: ['engine', 'drivetrain', 'introduction'],
-            difficulty: 'beginner',
-            priority: 18,
-            summary: 'Overview of engine certification requirements.'
-        },
-        {
-            id: 'std-60-10',
-            title: 'LVV Standard 60-10 - Modified Light Vehicle Engine',
-            description: 'Requirements for engine conversions, swaps, and modifications.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_60-10_(Modified_Light_Vehicle_Engine).pdf',
-            keywords: ['engine', 'engine swap', 'conversion', 'turbo', 'supercharger'],
-            difficulty: 'intermediate',
-            priority: 19,
-            summary: 'How to certify engine swaps and significant power modifications.'
-        },
-        {
-            id: 'std-60-20',
-            title: 'LVV Standard 60-20 - Scratch-built Light Vehicle Engine',
-            description: 'Engine installation requirements for scratch-built vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_60-20_(Scratch-built_Light_Vehicle_Engine).pdf',
-            keywords: ['engine', 'scratch-built', 'installation'],
-            difficulty: 'advanced',
-            priority: 20,
-            summary: 'Engine installation requirements when building from scratch.'
-        },
-
-        // 65 Series - Drivetrain
-        {
-            id: 'std-65-00',
-            title: 'LVV Standard 65-00 - Drivetrain Introduction',
-            description: 'Introduction to drivetrain and transmission requirements.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_65-00_(Drivetrain_Introduction).pdf',
-            keywords: ['drivetrain', 'transmission', 'introduction'],
-            difficulty: 'beginner',
-            priority: 21,
-            summary: 'Overview of drivetrain modification requirements.'
-        },
-        {
-            id: 'std-65-10',
-            title: 'LVV Standard 65-10 - Modified Light Vehicle Drivetrain',
-            description: 'Requirements for gearbox swaps, diff conversions, and drivetrain modifications.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_65-10_(Modified_Light_Vehicle_Drivetrain).pdf',
-            keywords: ['drivetrain', 'gearbox', 'differential', 'driveshaft', 'transmission swap'],
-            difficulty: 'intermediate',
-            priority: 22,
-            summary: 'How to certify transmission and drivetrain modifications.'
-        },
-
-        // 70 Series - Fuel
-        {
-            id: 'std-70-00',
-            title: 'LVV Standard 70-00 - Fuel Systems Introduction',
-            description: 'Introduction to fuel system requirements.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_70-00_(Fuel_Systems_Introduction).pdf',
-            keywords: ['fuel', 'introduction'],
-            difficulty: 'beginner',
-            priority: 23,
-            summary: 'Overview of fuel system certification requirements.'
-        },
-        {
-            id: 'std-70-10',
-            title: 'LVV Standard 70-10 - Modified Light Vehicle Fuel Systems',
-            description: 'Requirements for fuel system modifications including tank relocations and fuel cell installations.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_70-10_(Modified_Light_Vehicle_Fuel_Systems).pdf',
-            keywords: ['fuel', 'fuel tank', 'fuel cell', 'fuel system'],
-            difficulty: 'intermediate',
-            priority: 24,
-            summary: 'How to certify fuel system modifications - important safety area.'
-        },
-
-        // 75 Series - LPG/CNG
-        {
-            id: 'std-75-10',
-            title: 'LVV Standard 75-10 - LPG & CNG Fuel Systems',
-            description: 'Requirements for LPG and CNG (gas) fuel system installations.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_75-10_(LPG_and_CNG_Fuel_Systems).pdf',
-            keywords: ['LPG', 'CNG', 'gas', 'alternative fuel'],
-            difficulty: 'specialist',
-            priority: 25,
-            summary: 'Specialist requirements for gas fuel system installations.'
-        },
-
-        // 80 Series - Electrical
-        {
-            id: 'std-80-00',
-            title: 'LVV Standard 80-00 - Electrical Systems Introduction',
-            description: 'Introduction to electrical system requirements.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_80-00_(Electrical_Systems_Introduction).pdf',
-            keywords: ['electrical', 'introduction', 'wiring'],
-            difficulty: 'beginner',
-            priority: 26,
-            summary: 'Overview of electrical certification requirements.'
-        },
-        {
-            id: 'std-80-10',
-            title: 'LVV Standard 80-10 - Modified Light Vehicle Electrical',
-            description: 'Requirements for electrical modifications including rewiring and component changes.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_80-10_(Modified_Light_Vehicle_Electrical).pdf',
-            keywords: ['electrical', 'wiring', 'battery relocation'],
-            difficulty: 'intermediate',
-            priority: 27,
-            summary: 'How to certify electrical system modifications.'
-        },
-
-        // 85 Series - Electric Vehicles
-        {
-            id: 'std-85-10',
-            title: 'LVV Standard 85-10 - Electric Vehicle Conversions',
-            description: 'Requirements for converting vehicles to electric power.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_85-10_(Electric_Vehicle_Conversions).pdf',
-            keywords: ['electric', 'EV', 'conversion', 'battery', 'motor'],
-            difficulty: 'specialist',
-            priority: 28,
-            summary: 'Specialist requirements for converting vehicles to electric power.'
-        },
-
-        // 90 Series - Lighting
-        {
-            id: 'std-90-00',
-            title: 'LVV Standard 90-00 - Lighting Introduction',
-            description: 'Introduction to lighting system requirements.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_90-00_(Lighting_Introduction).pdf',
-            keywords: ['lighting', 'lights', 'introduction'],
-            difficulty: 'beginner',
-            priority: 29,
-            summary: 'Overview of lighting system certification requirements.'
-        },
-        {
-            id: 'std-90-10',
-            title: 'LVV Standard 90-10 - Modified Vehicle Lighting',
-            description: 'Requirements for lighting modifications on vehicles.',
-            category: 'STANDARDS',
-            url: 'standards/lvv_standards/LVV_Standard_90-10_(Modified_Vehicle_Lighting).pdf',
-            keywords: ['lighting', 'headlights', 'tail lights', 'indicators'],
-            difficulty: 'intermediate',
-            priority: 30,
-            summary: 'How to certify lighting modifications.'
-        },
-
-        // ==================== NZCCM - COMPLETE ====================
-        {
-            id: 'nzccm-full',
-            title: 'NZ Car Construction Manual (Complete)',
-            description: 'The complete NZ Car Construction Manual - 529 pages covering all aspects of vehicle design, modification, and construction. FREE download since Feb 2021.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-Full-Version.pdf',
-            keywords: ['NZCCM', 'complete', 'full', 'scratch-built', 'kit car', 'construction', 'design'],
-            difficulty: 'essential',
-            priority: 1,
-            summary: 'The bible for scratch-built vehicles. 529 pages covering chassis, brakes, steering, suspension, engine, fuel, electrical, and more. Essential reference.'
-        },
-        {
-            id: 'nzccm-ch2',
-            title: 'NZCCM Chapter 2 - About This Manual',
-            description: 'Introduction to the Car Construction Manual - how to use it, scope, and helpful information.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH2-About-This-Manual.pdf',
-            keywords: ['introduction', 'how to use', 'scope'],
-            difficulty: 'beginner',
-            priority: 2,
-            summary: 'Start here - explains how to navigate and use the manual effectively.'
-        },
-        {
-            id: 'nzccm-ch3',
-            title: 'NZCCM Chapter 3 - Authority Card Process',
-            description: 'The authority card process for scratch-built vehicles - administrative requirements and procedures.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH3-Authority-Card-Process.pdf',
-            keywords: ['authority card', 'process', 'administration', 'approval'],
-            difficulty: 'intermediate',
-            priority: 3,
-            summary: 'How the authority card system works for scratch-built vehicle certification.'
-        },
-        {
-            id: 'nzccm-ch4',
-            title: 'NZCCM Chapter 4 - Terms & Definitions',
-            description: 'Technical terminology and definitions used throughout the NZ Car Construction Manual.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH4-Terms-And-Definitions.pdf',
-            keywords: ['terms', 'definitions', 'glossary', 'terminology'],
-            difficulty: 'beginner',
-            priority: 4,
-            summary: 'Essential glossary - understand the technical language before diving into technical chapters.'
-        },
-        {
-            id: 'nzccm-ch5',
-            title: 'NZCCM Chapter 5 - Chassis Modification & Construction',
-            description: 'Comprehensive guide to chassis design, modification, and construction including materials, welding, and structural integrity.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH5-Chassis-Modification-And-Construction.pdf',
-            keywords: ['chassis', 'frame', 'construction', 'welding', 'structure', 'materials', 'steel', 'tube'],
-            difficulty: 'advanced',
-            priority: 5,
-            summary: 'Critical chapter - covers chassis types, materials, welding requirements, and structural calculations. Updated July 2021.'
-        },
-        {
-            id: 'nzccm-ch6',
-            title: 'NZCCM Chapter 6 - Roll Cages',
-            description: 'Requirements for roll cage design, construction, and installation for vehicle safety.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH6-Roll-Cages.pdf',
-            keywords: ['roll cage', 'roll bar', 'safety', 'protection', 'motorsport'],
-            difficulty: 'advanced',
-            priority: 6,
-            summary: 'Roll cage design requirements - tube specifications, mounting points, and construction standards.'
-        },
-        {
-            id: 'nzccm-ch7',
-            title: 'NZCCM Chapter 7 - Steering Systems',
-            description: 'Steering system design and modification requirements including geometry, components, and safety.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH7-Steering-Systems.pdf',
-            keywords: ['steering', 'rack', 'geometry', 'ackerman', 'column', 'universal joint'],
-            difficulty: 'advanced',
-            priority: 7,
-            summary: 'Steering geometry, component selection, and safety requirements for scratch-built vehicles.'
-        },
-        {
-            id: 'nzccm-ch8',
-            title: 'NZCCM Chapter 8 - Braking Systems',
-            description: 'Comprehensive braking system requirements including hydraulics, components, and performance calculations.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH8-Braking-Systems.pdf',
-            keywords: ['brakes', 'braking', 'hydraulic', 'master cylinder', 'disc', 'drum', 'pedal ratio'],
-            difficulty: 'advanced',
-            priority: 8,
-            summary: 'Critical safety chapter - brake system design, calculations, and component requirements.'
-        },
-        {
-            id: 'nzccm-ch9',
-            title: 'NZCCM Chapter 9 - Engine & Drivetrain',
-            description: 'Engine installation and drivetrain requirements including mounting, cooling, and transmission.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH9-Engine-And-Drivetrain.pdf',
-            keywords: ['engine', 'drivetrain', 'transmission', 'gearbox', 'differential', 'driveshaft', 'cooling', 'mounting'],
-            difficulty: 'advanced',
-            priority: 9,
-            summary: 'Engine mounting, drivetrain layout, cooling systems, and transmission requirements. Updated July 2021.'
-        },
-        {
-            id: 'nzccm-ch10',
-            title: 'NZCCM Chapter 10 - Fuel Systems',
-            description: 'Fuel system design and safety requirements including tanks, lines, and fire prevention.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH10-Fuel-Systems.pdf',
-            keywords: ['fuel', 'tank', 'fuel cell', 'fuel lines', 'fire safety', 'petrol'],
-            difficulty: 'advanced',
-            priority: 10,
-            summary: 'Fuel system safety - tank location, fuel lines, venting, and fire prevention. Updated July 2021.'
-        },
-        {
-            id: 'nzccm-ch11',
-            title: 'NZCCM Chapter 11 - Suspension Systems',
-            description: 'Suspension design principles, component requirements, and geometry for scratch-built vehicles.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH11-Suspension-Systems.pdf',
-            keywords: ['suspension', 'springs', 'dampers', 'geometry', 'wishbone', 'macpherson', 'live axle'],
-            difficulty: 'advanced',
-            priority: 11,
-            summary: 'Suspension types, geometry principles, and component selection for custom builds.'
-        },
-        {
-            id: 'nzccm-ch12',
-            title: 'NZCCM Chapter 12 - Wheels, Tyres & Hubs',
-            description: 'Requirements for wheels, tyres, and hub assemblies on scratch-built vehicles.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH12-Wheels-Tyres-And-Hubs.pdf',
-            keywords: ['wheels', 'tyres', 'hubs', 'bearings', 'PCD', 'offset', 'load rating'],
-            difficulty: 'intermediate',
-            priority: 12,
-            summary: 'Wheel and tyre specifications, hub requirements, and load ratings.'
-        },
-        {
-            id: 'nzccm-ch13',
-            title: 'NZCCM Chapter 13 - Bodywork',
-            description: 'Body construction requirements including materials, mounting, and safety considerations.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH13-Bodywork.pdf',
-            keywords: ['body', 'bodywork', 'panels', 'fibreglass', 'mounting', 'guards'],
-            difficulty: 'intermediate',
-            priority: 13,
-            summary: 'Body construction, materials, and mounting requirements.'
-        },
-        {
-            id: 'nzccm-ch14',
-            title: 'NZCCM Chapter 14 - Electrical Systems',
-            description: 'Electrical system requirements including wiring, components, and safety.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH14-Electrical-Systems.pdf',
-            keywords: ['electrical', 'wiring', 'battery', 'alternator', 'fuses', 'circuits'],
-            difficulty: 'intermediate',
-            priority: 14,
-            summary: 'Wiring standards, component requirements, and electrical safety.'
-        },
-        {
-            id: 'nzccm-ch15',
-            title: 'NZCCM Chapter 15 - Glazing & Vision',
-            description: 'Windscreen and glazing requirements including materials, visibility, and safety standards.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH15-Glazing-And-Vision.pdf',
-            keywords: ['glazing', 'windscreen', 'glass', 'visibility', 'mirrors', 'vision'],
-            difficulty: 'intermediate',
-            priority: 15,
-            summary: 'Windscreen requirements, visibility standards, and mirror placement.'
-        },
-        {
-            id: 'nzccm-ch16',
-            title: 'NZCCM Chapter 16 - Occupant Protection',
-            description: 'Occupant safety requirements including seating, seatbelts, and protection systems.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH16-Occupant-Protection.pdf',
-            keywords: ['occupant', 'protection', 'seatbelts', 'seats', 'harness', 'safety'],
-            difficulty: 'essential',
-            priority: 16,
-            summary: 'Critical safety - seating, seatbelt mounting, and occupant protection requirements.'
-        },
-        {
-            id: 'nzccm-ch17',
-            title: 'NZCCM Chapter 17 - Lighting',
-            description: 'Lighting system requirements including headlights, indicators, and auxiliary lighting.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH17-Lighting.pdf',
-            keywords: ['lighting', 'headlights', 'indicators', 'tail lights', 'brake lights'],
-            difficulty: 'intermediate',
-            priority: 17,
-            summary: 'Lighting placement, specifications, and legal requirements.'
-        },
-        {
-            id: 'nzccm-ch18',
-            title: 'NZCCM Chapter 18 - Instruments & Controls',
-            description: 'Dashboard instruments and control requirements for scratch-built vehicles.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH18-Instruments-And-Controls.pdf',
-            keywords: ['instruments', 'gauges', 'controls', 'dashboard', 'speedometer'],
-            difficulty: 'intermediate',
-            priority: 18,
-            summary: 'Required instruments, control placement, and ergonomics.'
-        },
-        {
-            id: 'nzccm-ch19',
-            title: 'NZCCM Chapter 19 - Vehicle Operation',
-            description: 'Operational requirements and final checks for scratch-built vehicles.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-CH19-Vehicle-Operation.pdf',
-            keywords: ['operation', 'testing', 'final checks', 'commissioning'],
-            difficulty: 'intermediate',
-            priority: 19,
-            summary: 'Final operational requirements and vehicle commissioning procedures.'
-        },
-        {
-            id: 'nzccm-appendices',
-            title: 'NZCCM Appendices & Reference Tables',
-            description: 'Reference tables, calculations, and appendices for the NZ Car Construction Manual.',
-            category: 'NZCCM',
-            url: 'nz-car-construction-manual/NZ-Car-Construction-Manual-Appendices.pdf',
-            keywords: ['appendix', 'tables', 'reference', 'calculations', 'data'],
+            id: 'lvv-code-index',
+            title: 'LVV Code Index',
+            description: 'Index to the LVV Code.',
+            category: 'CODE',
+            url: 'lvv-code/lvv-code-index.pdf',
+            keywords: ['index', 'reference'],
             difficulty: 'reference',
-            priority: 20,
-            summary: 'Quick reference tables, calculations, and technical data.'
+            priority: 2,
+            summary: 'Quick reference index for the Code.'
+        },
+
+        // ==================== LATEST INFORMATION SHEETS ====================
+        {
+            id: 'info-03-2025',
+            title: 'Info 03-2025 - Changes to Objective Exhaust Noise Testing',
+            description: 'NEW! Latest changes to exhaust noise testing procedures.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-03-2025-changes-objective-exhaust-noise-testing.pdf',
+            keywords: ['exhaust', 'noise', 'testing', '2025', 'new'],
+            difficulty: 'intermediate',
+            priority: 1,
+            year: 2025,
+            summary: 'NEW 2025 - Updated exhaust noise testing requirements.'
+        },
+        {
+            id: 'info-02-2025',
+            title: 'Info 02-2025 - Positioning of Wheelchairs, Restraints, and Seats',
+            description: 'NEW! Requirements for wheelchair positioning in vehicles not subject to PSV Rule.',
+            category: 'INFO_NONTECH',
+            url: 'information-sheets/info-02-2025-wheelchair-positioning-restraints-seats.pdf',
+            keywords: ['wheelchair', 'positioning', 'restraints', 'disability', '2025'],
+            difficulty: 'specialist',
+            priority: 2,
+            year: 2025,
+            summary: 'NEW 2025 - Wheelchair and restraint positioning guidance.'
+        },
+        {
+            id: 'info-01-2025',
+            title: 'Info 01-2025 - High-sided Race Seats and Three-point Seatbelts',
+            description: 'NEW! Requirements for race seats with three-point seatbelts.',
+            category: 'INFO_NONTECH',
+            url: 'information-sheets/info-01-2025-high-sided-race-seats-three-point-seatbelts.pdf',
+            keywords: ['race seats', 'seatbelts', 'harness', 'safety', '2025'],
+            difficulty: 'intermediate',
+            priority: 3,
+            year: 2025,
+            summary: 'NEW 2025 - Race seat and seatbelt combination requirements.'
+        },
+        {
+            id: 'info-01-2024',
+            title: 'Info 01-2024 - Steering Column Test',
+            description: 'Steering column testing requirements and procedures.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-01-2024-steering-column-test.pdf',
+            keywords: ['steering', 'column', 'test', 'cyclic'],
+            difficulty: 'intermediate',
+            priority: 4,
+            year: 2024,
+            summary: 'Steering column testing for aftermarket and modified columns.'
+        },
+        {
+            id: 'info-03-2023',
+            title: 'Info 03-2023 - LVVTA Classic Car Retro-fit Seatbelt Structure',
+            description: 'Retro-fit seatbelt structure for classic cars.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-03-2023-classic-car-retrofit-seatbelt-structure.pdf',
+            keywords: ['classic', 'seatbelt', 'retrofit', 'structure'],
+            difficulty: 'intermediate',
+            priority: 5,
+            year: 2023,
+            summary: 'How to install seatbelts in classic cars without proper anchorages.'
+        },
+        {
+            id: 'info-02-2023',
+            title: 'Info 02-2023 - Aftermarket Tubular Suspension Arms with Cantilever Ball Joints',
+            description: 'Safety alert and requirements for cantilever-style ball joints.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-02-2023-aftermarket-tubular-suspension-arms-cantilever-ball-joints.pdf',
+            keywords: ['suspension', 'arms', 'cantilever', 'ball joint', 'safety'],
+            difficulty: 'intermediate',
+            priority: 6,
+            year: 2023,
+            summary: 'WARNING: Cantilever ball joint issues and requirements.'
+        },
+        {
+            id: 'info-01-2023',
+            title: 'Info 01-2023 - Copies of Astro Supreme-brand Wheels',
+            description: 'Safety alert regarding counterfeit Supreme-brand wheels.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-01-2023-copies-astro-supreme-brand-wheels.pdf',
+            keywords: ['wheels', 'supreme', 'counterfeit', 'safety', 'alert'],
+            difficulty: 'essential',
+            priority: 7,
+            year: 2023,
+            summary: 'WARNING: Counterfeit wheel identification and rejection.'
+        },
+        {
+            id: 'info-01-2022',
+            title: 'Info 01-2022 - Wheel Adaptor Minimum Specifications',
+            description: 'Minimum specifications for wheel adaptors/spacers.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-01-2022-wheel-adaptor-minimum-specifications.pdf',
+            keywords: ['wheel', 'adaptor', 'spacer', 'specifications'],
+            difficulty: 'intermediate',
+            priority: 8,
+            year: 2022,
+            summary: 'Wheel adaptor thickness, material, and design requirements.'
+        },
+        {
+            id: 'info-02-2022',
+            title: 'Info 02-2022 - LVV Certification of GVM Upgrades',
+            description: 'Requirements for Gross Vehicle Mass upgrade certifications.',
+            category: 'INFO_NONTECH',
+            url: 'information-sheets/info-02-2022-lvv-certification-gvm-upgrades.pdf',
+            keywords: ['GVM', 'gross vehicle mass', 'upgrade', 'weight'],
+            difficulty: 'specialist',
+            priority: 9,
+            year: 2022,
+            summary: 'GVM upgrade certification process and requirements.'
+        },
+
+        // ==================== KEY TECHNICAL INFORMATION SHEETS ====================
+        {
+            id: 'info-09-2021',
+            title: 'Info 09-2021 - Raised Vehicle Stability Calculation',
+            description: 'Stability calculation requirements for raised/lifted vehicles.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-09-2021-raised-vehicle-stability-calculation.pdf',
+            keywords: ['raised', 'lifted', 'stability', 'calculation', '4WD'],
+            difficulty: 'advanced',
+            priority: 10,
+            year: 2021,
+            summary: 'IMPORTANT: Stability calculations for lifted 4WD vehicles.'
+        },
+        {
+            id: 'info-07-2021',
+            title: 'Info 07-2021 - Power to Manual Steering Conversion',
+            description: 'Converting power steering to manual steering.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-07-2021-power-to-manual-steering-conversion.pdf',
+            keywords: ['steering', 'power', 'manual', 'conversion'],
+            difficulty: 'intermediate',
+            priority: 11,
+            year: 2021,
+            summary: 'Requirements for removing power steering.'
+        },
+        {
+            id: 'info-05-2020',
+            title: 'Info 05-2020 - Tyre Track and Protrusion Beyond Mudguards',
+            description: 'Requirements for tyres protruding beyond guards.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-05-2020-tyre-track-protrusion-mudguards.pdf',
+            keywords: ['tyres', 'track', 'protrusion', 'mudguards', 'guards'],
+            difficulty: 'intermediate',
+            priority: 12,
+            year: 2020,
+            summary: 'How much tyre can stick out beyond the guards.'
+        },
+        {
+            id: 'info-04-2020',
+            title: 'Info 04-2020 - Spherical Bearing Rod End Conversion',
+            description: 'Requirements for rose joint/spherical bearing conversions in steering and suspension.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-04-2020-spherical-bearing-rod-end-conversion.pdf',
+            keywords: ['spherical', 'bearing', 'rod end', 'rose joint', 'heim'],
+            difficulty: 'intermediate',
+            priority: 13,
+            year: 2020,
+            summary: 'Rose joint/heim joint requirements for tie-rods and suspension.'
+        },
+        {
+            id: 'info-02-2020',
+            title: 'Info 02-2020 - Wheelchair Restraint & Docking Station Rating Guide',
+            description: 'Rating guide for wheelchair restraint systems.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-02-2020-wheelchair-restraint-docking-station-rating-guide.pdf',
+            keywords: ['wheelchair', 'restraint', 'docking', 'rating', 'disability'],
+            difficulty: 'specialist',
+            priority: 14,
+            year: 2020,
+            summary: 'Rating requirements for wheelchair restraint systems.'
+        },
+        {
+            id: 'info-01-2020',
+            title: 'Info 01-2020 - Removal of Seats Fitted with Side-impact Airbags',
+            description: 'Requirements for removing seats with integrated airbags.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-01-2020-removal-seats-side-impact-airbags.pdf',
+            keywords: ['seats', 'airbags', 'side impact', 'removal', 'SRS'],
+            difficulty: 'intermediate',
+            priority: 15,
+            year: 2020,
+            summary: 'IMPORTANT: When and how airbag-equipped seats can be removed.'
+        },
+        {
+            id: 'info-01-2018',
+            title: 'Info 01-2018 - Welding Process for Cast or Forged Components',
+            description: 'Welding requirements for cast and forged parts.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-01-2018-welding-process-cast-forged-components.pdf',
+            keywords: ['welding', 'cast', 'forged', 'components', 'repair'],
+            difficulty: 'advanced',
+            priority: 16,
+            year: 2018,
+            summary: 'Critical welding requirements for cast/forged suspension and steering components.'
+        },
+        {
+            id: 'info-01-2016',
+            title: 'Info 01-2016 - Custom IFS/IRS Approval Application Guide',
+            description: 'Guide for getting custom independent suspension approved.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-01-2016-custom-ifs-irs-approval-application-guide.pdf',
+            keywords: ['IFS', 'IRS', 'suspension', 'custom', 'approval'],
+            difficulty: 'advanced',
+            priority: 17,
+            year: 2016,
+            summary: 'How to get custom suspension systems approved.'
+        },
+        {
+            id: 'info-01-2009',
+            title: 'Info 01-2009 - Tyre Size to Rim Size Compatibility Guide',
+            description: 'Guide for determining tyre and rim compatibility.',
+            category: 'INFO_TECH',
+            url: 'information-sheets/info-01-2009-tyre-size-rim-size-compatibility-guide.pdf',
+            keywords: ['tyre', 'rim', 'compatibility', 'size', 'stretch'],
+            difficulty: 'essential',
+            priority: 18,
+            year: 2009,
+            summary: 'ESSENTIAL: What tyre sizes fit what rim widths. V5 released June 2021.'
         },
 
         // ==================== SUPPLEMENTARY INFORMATION ====================
         {
-            id: 'cert-threshold',
-            title: 'LVV Certification Threshold Schedule',
-            description: 'Defines when LVV certification is required based on modification level. Three groups: always required, sometimes required, never required.',
+            id: 'tech-bulletin-1',
+            title: 'NZHRA Tech Bulletin 1 - Electroplating of High Tensile Fasteners',
+            description: 'Guidance on electroplating high-tensile bolts.',
             category: 'SUPPLEMENTARY',
-            url: 'suplementary_information/LVVTA_LVV_Cert_Threshold.pdf',
-            keywords: ['threshold', 'when required', 'modification level', 'certification required'],
-            difficulty: 'essential',
+            url: 'supplementary-information/nzhra-tech-bulletin-1-electroplating-high-tensile-fasteners.pdf',
+            keywords: ['electroplating', 'fasteners', 'bolts', 'hydrogen embrittlement'],
+            difficulty: 'advanced',
             priority: 1,
-            summary: 'Critical document - tells you when a modification requires LVV certification.'
+            summary: 'WARNING: Electroplating can cause hydrogen embrittlement in high-tensile bolts.'
         },
         {
-            id: 'info-sheet-1',
-            title: 'Info Sheet 01 - What is LVV Certification?',
-            description: 'General public information about LVV certification.',
+            id: 'tech-bulletin-2',
+            title: 'NZHRA Tech Bulletin 2 - Use of Stainless Steel Fasteners',
+            description: 'Guidance on using stainless steel fasteners.',
             category: 'SUPPLEMENTARY',
-            url: 'suplementary_information/info_sheets/LVVTA_Info_Sheet_01.pdf',
-            keywords: ['information', 'public', 'overview'],
-            difficulty: 'beginner',
+            url: 'supplementary-information/nzhra-tech-bulletin-2-stainless-steel-fasteners.pdf',
+            keywords: ['stainless', 'steel', 'fasteners', 'bolts'],
+            difficulty: 'intermediate',
             priority: 2,
-            summary: 'Basic introduction to what LVV certification is for the public.'
+            summary: 'When stainless fasteners are and are not appropriate.'
         },
         {
-            id: 'info-sheet-2',
-            title: 'Info Sheet 02 - Modified Vehicles',
-            description: 'Information about certification requirements for modified vehicles.',
+            id: 'tech-bulletin-4',
+            title: 'NZHRA Tech Bulletin 4 - Certifiers A-arm IFS Guide',
+            description: 'Guide for certifying A-arm independent front suspension.',
             category: 'SUPPLEMENTARY',
-            url: 'suplementary_information/info_sheets/LVVTA_Info_Sheet_02.pdf',
-            keywords: ['modified', 'information', 'requirements'],
-            difficulty: 'beginner',
+            url: 'supplementary-information/nzhra-tech-bulletin-4-certifiers-a-arm-ifs-guide.pdf',
+            keywords: ['A-arm', 'IFS', 'suspension', 'guide'],
+            difficulty: 'advanced',
             priority: 3,
-            summary: 'Overview of certification requirements for modified vehicles.'
+            summary: 'A-arm IFS certification guidance.'
         },
         {
-            id: 'info-sheet-3',
-            title: 'Info Sheet 03 - Scratch-built Vehicles',
-            description: 'Information about certification for scratch-built and kit vehicles.',
+            id: 'tech-bulletin-5',
+            title: 'NZHRA Tech Bulletin 5 - Builders Welding Guide',
+            description: 'Welding guide for vehicle builders.',
             category: 'SUPPLEMENTARY',
-            url: 'suplementary_information/info_sheets/LVVTA_Info_Sheet_03.pdf',
-            keywords: ['scratch-built', 'kit', 'custom', 'information'],
-            difficulty: 'beginner',
+            url: 'supplementary-information/nzhra-tech-bulletin-5-builders-welding-guide.pdf',
+            keywords: ['welding', 'guide', 'MIG', 'TIG', 'builders'],
+            difficulty: 'advanced',
             priority: 4,
-            summary: 'Overview of what scratch-built certification involves.'
+            summary: 'Welding requirements and techniques for vehicle construction.'
         },
         {
-            id: 'certifier-list-gmv',
-            title: 'LVV Certifier Contact List - General Motor Vehicles',
-            description: 'List of appointed LVV Certifiers for general motor vehicles.',
+            id: 'chart-r1',
+            title: 'Chart R1 - Activation Dates for LVV Vehicle Certification',
+            description: 'Chart showing when various LVV requirements came into effect.',
             category: 'SUPPLEMENTARY',
-            url: 'suplementary_information/certifier_lists/lvv_certifier_list_website_general_motor_vehicles.pdf',
-            keywords: ['certifiers', 'contact', 'list', 'GMV'],
+            url: 'supplementary-information/chart-r1-activation-dates-lvv-certification.pdf',
+            keywords: ['dates', 'activation', 'requirements', 'history'],
             difficulty: 'reference',
             priority: 5,
-            summary: 'Find an LVV Certifier in your area for general vehicle modifications.'
+            summary: 'Reference chart for when requirements became effective.'
         },
         {
-            id: 'certifier-list-hv',
-            title: 'LVV Certifier Contact List - Heavy Vehicles',
-            description: 'List of appointed LVV Certifiers for heavy vehicles.',
+            id: 'certifier-list',
+            title: 'LVV Certifier List, Contact Details & Categories',
+            description: 'List of all appointed LVV Certifiers with contact details and categories.',
             category: 'SUPPLEMENTARY',
-            url: 'suplementary_information/certifier_lists/lvv_certifier_list_website_heavy_vehicles.pdf',
-            keywords: ['certifiers', 'contact', 'list', 'heavy'],
+            url: 'supplementary-information/lvv-certifier-list-contact-details-categories.pdf',
+            keywords: ['certifiers', 'list', 'contact', 'categories'],
             difficulty: 'reference',
             priority: 6,
-            summary: 'Find an LVV Certifier for heavy vehicle modifications.'
+            summary: 'Find an LVV Certifier - contact details and specialisations.'
         },
         {
-            id: 'certifier-list-ont',
-            title: 'LVV Certifier Contact List - Off-road & Non-transport',
-            description: 'List of appointed LVV Certifiers for ONT vehicles.',
+            id: 'obj-noise-certifiers',
+            title: 'Objective Noise Test-capable LVV Certifiers',
+            description: 'List of certifiers who can perform objective noise testing.',
             category: 'SUPPLEMENTARY',
-            url: 'suplementary_information/certifier_lists/lvv_certifier_list_website_ONT.pdf',
-            keywords: ['certifiers', 'contact', 'list', 'ONT', 'off-road'],
+            url: 'supplementary-information/objective-noise-test-capable-lvv-certifiers.pdf',
+            keywords: ['noise', 'testing', 'objective', 'certifiers'],
             difficulty: 'reference',
             priority: 7,
-            summary: 'Find an LVV Certifier for off-road and non-transport vehicles.'
+            summary: 'Find a certifier who can do noise testing.'
+        },
+        {
+            id: 'supp-index',
+            title: 'Supplementary Information Index',
+            description: 'Index of all supplementary information documents.',
+            category: 'SUPPLEMENTARY',
+            url: 'supplementary-information/supplementary-information-index.pdf',
+            keywords: ['index', 'supplementary', 'reference'],
+            difficulty: 'reference',
+            priority: 99,
+            summary: 'Index to find supplementary documents.'
         },
 
-        // ==================== FORMS ====================
+        // ==================== EXTERNAL RESOURCES ====================
         {
-            id: 'form-cert-record',
-            title: 'LVV Certification Record Form',
-            description: 'The main certification record form used for all LVV certifications.',
-            category: 'FORMS',
-            url: 'forms/LVV_Certification_Record.pdf',
-            keywords: ['form', 'certification', 'record', 'paperwork'],
+            id: 'virm-link',
+            title: 'WoF VIRM - Vehicle Inspection Requirements Manual',
+            description: 'External link to NZTA VIRM - the WoF/CoF inspection requirements. Essential reference.',
+            category: 'EXTERNAL',
+            url: 'https://vehicleinspection.nzta.govt.nz/virm',
+            keywords: ['VIRM', 'WoF', 'CoF', 'inspection', 'warrant'],
             difficulty: 'essential',
             priority: 1,
-            summary: 'The primary documentation form for recording LVV certifications.'
+            summary: 'ESSENTIAL: WoF inspection requirements - what passes and fails.'
         },
         {
-            id: 'form-plate-order',
-            title: 'LVV Plate Order Form',
-            description: 'Form for ordering certification plates.',
-            category: 'FORMS',
-            url: 'forms/LVV_Plate_Order_Form.pdf',
-            keywords: ['form', 'plate', 'order'],
-            difficulty: 'intermediate',
+            id: 'land-transport-rules',
+            title: 'Land Transport Rules',
+            description: 'External link to NZTA Land Transport Rules - the legal requirements.',
+            category: 'EXTERNAL',
+            url: 'https://www.nzta.govt.nz/resources/rules/',
+            keywords: ['rules', 'legal', 'legislation', 'transport'],
+            difficulty: 'essential',
             priority: 2,
-            summary: 'How to order certification plates for completed certifications.'
-        },
-
-        // ==================== TECHNICAL BULLETINS ====================
-        {
-            id: 'tech-bulletin-index',
-            title: 'Technical Bulletin Index',
-            description: 'Index of all technical bulletins issued by LVVTA.',
-            category: 'TECHNICAL',
-            url: 'suplementary_information/technical_bulletins/Technical_Bulletin_Index.pdf',
-            keywords: ['bulletins', 'index', 'updates'],
-            difficulty: 'intermediate',
-            priority: 1,
-            summary: 'Find specific technical bulletins on various topics.'
+            summary: 'The underlying legal requirements that govern everything.'
         },
 
         // ==================== QUICK REFERENCE (EXAM DAY) ====================
@@ -893,7 +1324,18 @@ const LVVDatabase = {
             keywords: ['dates', 'numbers', 'quick', 'reference', '1949', '4500kg', 'thresholds'],
             difficulty: 'essential',
             priority: 1,
-            summary: '1949 = Historic replica cutoff | 4500kg = Heavy vehicle threshold | 1/3 suspension travel = lowering threshold | Rule 35001/1 = Vehicle Standards Compliance'
+            summary: '1949 = Historic replica cutoff | 4500kg = Heavy vehicle threshold | 1/3 suspension travel = lowering threshold | Rule 35001/1 = Vehicle Standards Compliance 2002'
+        },
+        {
+            id: 'qr-standards-numbers',
+            title: 'Quick Ref: Standards Numbering System',
+            description: 'How to decode LVV Standard numbers.',
+            category: 'QUICKREF',
+            url: null,
+            keywords: ['standards', 'numbering', 'decode'],
+            difficulty: 'essential',
+            priority: 2,
+            summary: '35=Brakes | 40=Chassis | 45=Disability | 75=EV | 85=Engine | 90=Emissions | 100=External | 105=Fuel | 125=Lighting | 145=Motorcycles | 155=Impact/Doors | 175=Seatbelts | 185=Seats | 190=RHD | 195=Suspension | 200=Mirrors | 205=Wheels'
         },
         {
             id: 'qr-vehicle-classes',
@@ -903,8 +1345,8 @@ const LVVDatabase = {
             url: null,
             keywords: ['classifications', 'modified', 'scratch-built', 'replica', 'reproduction'],
             difficulty: 'essential',
-            priority: 2,
-            summary: 'MODIFIED = Based on production vehicle, keeps original VIN | SCRATCH-BUILT = New construction, gets new VIN from LVVTA | HISTORIC REPLICA = Pre-1949 copy, fewer requirements | REPRODUCTION = Post-1949 copy, full modern requirements'
+            priority: 3,
+            summary: 'MODIFIED = Production vehicle base, keeps original VIN | SCRATCH-BUILT = New construction, gets LVVTA VIN | HISTORIC REPLICA = Pre-1949 copy, fewer requirements | REPRODUCTION = Post-1949 copy, full modern requirements'
         },
         {
             id: 'qr-certifier-categories',
@@ -914,22 +1356,11 @@ const LVVDatabase = {
             url: null,
             keywords: ['categories', 'GMV', 'heavy', 'ONT', 'certifier types'],
             difficulty: 'essential',
-            priority: 3,
-            summary: 'GMV = General Motor Vehicles (under 4500kg) | HV = Heavy Vehicles (over 4500kg) | ONT = Off-road & Non-transport | Specialist categories for specific areas'
-        },
-        {
-            id: 'qr-standards-numbering',
-            title: 'Quick Ref: Standards Numbering System',
-            description: 'How to decode LVV Standard numbers.',
-            category: 'QUICKREF',
-            url: null,
-            keywords: ['standards', 'numbering', 'decode', '35', '40', '45', '50'],
-            difficulty: 'essential',
             priority: 4,
-            summary: '35=Brakes | 40=Steering | 45=Suspension | 50=Structure | 55=Wheels | 60=Engine | 65=Drivetrain | 70=Fuel | 80=Electrical | 90=Lighting || -00=Intro | -10=Modified Light | -20=Scratch-built | -40=Heavy'
+            summary: 'GMV = General Motor Vehicles (<4500kg) | HV = Heavy Vehicles (>4500kg) | ONT = Off-road & Non-transport | Specialist = Specific areas like disability, RHD'
         },
         {
-            id: 'qr-certification-groups',
+            id: 'qr-threshold-groups',
             title: 'Quick Ref: Certification Threshold Groups',
             description: 'The three groups of modifications.',
             category: 'QUICKREF',
@@ -937,7 +1368,7 @@ const LVVDatabase = {
             keywords: ['groups', 'threshold', 'always', 'sometimes', 'never'],
             difficulty: 'essential',
             priority: 5,
-            summary: 'GROUP 1 = ALWAYS requires cert (engine swaps, major structural, scratch-built) | GROUP 2 = Requires cert IF exceeds threshold (suspension lowering >1/3, significant power increase) | GROUP 3 = NEVER requires cert (still must meet WoF)'
+            summary: 'GROUP 1 = ALWAYS needs cert (engine swaps, structural, scratch-built) | GROUP 2 = Needs cert IF exceeds threshold (lowering >1/3, power increase) | GROUP 3 = NEVER needs cert (but must still pass WoF)'
         },
         {
             id: 'qr-certifier-attributes',
@@ -945,10 +1376,10 @@ const LVVDatabase = {
             description: 'The essential attributes of an LVV Certifier.',
             category: 'QUICKREF',
             url: null,
-            keywords: ['attributes', 'qualities', 'integrity', 'independence', 'conscientious'],
+            keywords: ['attributes', 'qualities', 'integrity', 'independence'],
             difficulty: 'essential',
             priority: 6,
-            summary: 'Technically skilled | Vastly experienced | Conscientious | Independent | Reliable | Good people skills | High integrity - ALL are required, technical skill alone is NOT sufficient'
+            summary: 'Technically skilled | Vastly experienced | Conscientious | Independent | Reliable | Good people skills | High integrity - ALL required, technical skill alone NOT sufficient'
         },
         {
             id: 'qr-document-hierarchy',
@@ -959,18 +1390,18 @@ const LVVDatabase = {
             keywords: ['hierarchy', 'legal', 'authority', 'documents'],
             difficulty: 'essential',
             priority: 7,
-            summary: '1. Land Transport Act 1998 | 2. Land Transport Rule 35001/1 (Vehicle Standards Compliance) | 3. LVV Code | 4. Operating Requirements Schedule (ORS) | 5. LVV Standards'
+            summary: '1. Land Transport Act 1998 | 2. Land Transport Rule 35001/1 | 3. LVV Code | 4. ORS | 5. LVV Standards | 6. NZCCM/Info Sheets'
         },
         {
-            id: 'qr-must-vs-should',
+            id: 'qr-must-should-may',
             title: 'Quick Ref: Must vs Should vs May',
             description: 'Understanding mandatory vs optional requirements.',
             category: 'QUICKREF',
             url: null,
-            keywords: ['must', 'shall', 'should', 'may', 'mandatory', 'optional'],
+            keywords: ['must', 'shall', 'should', 'may', 'mandatory'],
             difficulty: 'essential',
             priority: 8,
-            summary: 'MUST/SHALL = Mandatory, no flexibility, must comply | SHOULD = Recommended but not mandatory | MAY = Optional, permitted but not required'
+            summary: 'MUST/SHALL = Mandatory, no flexibility | SHOULD = Recommended, not mandatory | MAY = Optional, permitted'
         },
         {
             id: 'qr-common-mods',
@@ -978,10 +1409,10 @@ const LVVDatabase = {
             description: 'Quick guide to common modification certification requirements.',
             category: 'QUICKREF',
             url: null,
-            keywords: ['common', 'modifications', 'engine swap', 'lowering', 'turbo'],
+            keywords: ['common', 'modifications', 'engine swap', 'lowering'],
             difficulty: 'essential',
             priority: 9,
-            summary: 'Engine swap = Always cert (60-10, 65-10, 70-10, 80-10) | Lowering >1/3 = Cert required (45-10) | Turbo/supercharger = Usually cert (60-10) | Wheels beyond spec = Check thresholds (55-10) | Roll cage = Always cert (50-10)'
+            summary: 'Engine swap = Always (85-40) | Lowering >1/3 = Yes (195-00) | Turbo = Usually (85-40) | Wheels beyond spec = Check (205-00) | Roll cage = Always (40-00) | Brakes = Check threshold (35-00)'
         },
         {
             id: 'qr-nzccm-chapters',
@@ -989,10 +1420,10 @@ const LVVDatabase = {
             description: 'Quick reference to NZCCM chapter contents.',
             category: 'QUICKREF',
             url: null,
-            keywords: ['NZCCM', 'chapters', 'car construction manual'],
+            keywords: ['NZCCM', 'chapters', 'construction'],
             difficulty: 'reference',
             priority: 10,
-            summary: 'Ch5=Chassis | Ch6=Roll Cages | Ch7=Steering | Ch8=Brakes | Ch9=Engine/Drivetrain | Ch10=Fuel | Ch11=Suspension | Ch12=Wheels | Ch13=Body | Ch14=Electrical | Ch15=Glazing | Ch16=Occupant Protection | Ch17=Lighting | Ch18=Instruments | Ch19=Operation'
+            summary: 'Ch1=LVV System | Ch2=About | Ch3=Authority Card | Ch4=Build Approval | Ch5=Chassis | Ch6=Suspension | Ch7=Steering | Ch8=Brakes | Ch9=Engine | Ch10=Fuel | Ch11=Noise | Ch12=Wheels | Ch13=Body | Ch14=Seats | Ch15=Glazing | Ch16=Interior | Ch17=Lighting | Ch18=Attachment | Ch19=Operation'
         }
     ],
 
@@ -1006,7 +1437,7 @@ const LVVDatabase = {
                 return false;
             }
 
-            // Search in title, description, keywords
+            // Search in title, description, keywords, summary
             const searchText = [
                 doc.title,
                 doc.description,
@@ -1032,13 +1463,14 @@ const LVVDatabase = {
 
     // Get full URL for a document
     getFullUrl(doc) {
+        if (!doc.url) return null;
         if (doc.url.startsWith('http')) {
             return doc.url;
         }
         return this.baseUrl + doc.url;
     },
 
-    // Get essential documents for beginners
+    // Get essential documents
     getEssentials() {
         return this.documents
             .filter(doc => doc.difficulty === 'essential')
@@ -1054,6 +1486,37 @@ const LVVDatabase = {
             .filter(d => d.id !== docId && d.category === doc.category)
             .sort((a, b) => a.priority - b.priority)
             .slice(0, limit);
+    },
+
+    // Get documents by year
+    getByYear(year) {
+        return this.documents
+            .filter(doc => doc.year === year)
+            .sort((a, b) => a.priority - b.priority);
+    },
+
+    // Get latest documents
+    getLatest(limit = 10) {
+        return this.documents
+            .filter(doc => doc.year)
+            .sort((a, b) => (b.year || 0) - (a.year || 0))
+            .slice(0, limit);
+    },
+
+    // Statistics
+    getStats() {
+        const stats = {
+            total: this.documents.length,
+            byCategory: {},
+            byDifficulty: {}
+        };
+
+        this.documents.forEach(doc => {
+            stats.byCategory[doc.category] = (stats.byCategory[doc.category] || 0) + 1;
+            stats.byDifficulty[doc.difficulty] = (stats.byDifficulty[doc.difficulty] || 0) + 1;
+        });
+
+        return stats;
     }
 };
 
