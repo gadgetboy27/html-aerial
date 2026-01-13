@@ -1,0 +1,33 @@
+{
+  "intro-to-lvv": [
+    {
+      "question": "What is the main purpose of LVV certification?",
+      "options": [
+        "To make vehicles look better",
+        "To ensure modified and scratch-built vehicles are safe and legally compliant",
+        "To increase the resale value of a vehicle"
+      ],
+      "answer": "To ensure modified and scratch-built vehicles are safe and legally compliant"
+    },
+    {
+      "question": "Who is responsible for the LVV certification system in New Zealand?",
+      "options": [
+        "The New Zealand Police",
+        "The Low Volume Vehicle Technical Association (LVVTA)",
+        "The Ministry of Transport"
+      ],
+      "answer": "The Low Volume Vehicle Technical Association (LVVTA)"
+    }
+  ],
+  "lvv-classifications": [
+    {
+      "question": "Which of the following is NOT a key consideration for LVV classification?",
+      "options": [
+        "The vehicle's color",
+        "The extent of modifications",
+        "Whether the vehicle is scratch-built or modified"
+      ],
+      "answer": "The vehicle's color"
+    }
+  ]
+}

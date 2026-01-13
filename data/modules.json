@@ -1,0 +1,36 @@
+[
+  {
+    "id": "intro-to-lvv",
+    "title": "Introduction to LVV Certification",
+    "description": "An overview of the LVV certification process, the role of LVVTA, and the legal framework.",
+    "modules": [
+      {
+        "id": "what-is-lvv",
+        "title": "What is LVV Certification?",
+        "content": "<p>This module explains the purpose of LVV certification and why it is important for modified and scratch-built vehicles in New Zealand.</p>"
+      },
+      {
+        "id": "role-of-lvvta",
+        "title": "Role of LVVTA",
+        "content": "<p>This module details the role and responsibilities of the Low Volume Vehicle Technical Association (LVVTA).</p>"
+      }
+    ]
+  },
+  {
+    "id": "lvv-classifications",
+    "title": "Low Volume Vehicle Classifications",
+    "description": "Understanding the different vehicle types and categories.",
+    "modules": [
+      {
+        "id": "vehicle-types",
+        "title": "Vehicle Types and Categories",
+        "content": "<p>This module covers the criteria for classifying a vehicle as a low volume vehicle.</p>"
+      },
+      {
+        "id": "scratch-built-vs-modified",
+        "title": "Scratch-built vs. Modified Vehicles",
+        "content": "<p>This module explains the differences between scratch-built and modified vehicles in the context of LVV certification.</p>"
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "first_quiz_passed",
+    "title": "First Quiz Passed",
+    "description": "You passed your first quiz! Keep up the great work."
+  },
+  {
+    "id": "all_modules_completed",
+    "title": "All Modules Completed",
+    "description": "You have completed all the learning modules! You are now a master of the LVV certification system."
+  },
+  {
+    "id": "perfect_score",
+    "title": "Perfect Score",
+    "description": "You achieved a perfect score on a quiz! You are a true expert."
+  }
+]

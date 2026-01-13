@@ -1,0 +1,110 @@
+
+[
+  {
+    "id": "ors-chapters",
+    "title": "Operating Requirements Schedule (ORS) Chapters",
+    "description": "The Operating Requirements Schedule (ORS) outlines the legal and technical requirements for LVV Certifiers.",
+    "documents": [
+      {
+        "id": "ors-chapter-2",
+        "title": "LVV Classifications",
+        "url": "https://lvvta.org.nz/documents/ors/LVVTA_Operating_Requirements_Schedule_V2.3_2022-11-29.pdf#page=6"
+      },
+      {
+        "id": "ors-chapter-3",
+        "title": "LVV Certification Categories",
+        "url": "https://lvvta.org.nz/documents/ors/LVVTA_Operating_Requirements_Schedule_V2.3_2022-11-29.pdf#page=8"
+      },
+      {
+        "id": "ors-chapter-4",
+        "title": "LVV Certifier Background Criteria",
+        "url": "https://lvvta.org.nz/documents/ors/LVVTA_Operating_Requirements_Schedule_V2.3_2022-11-29.pdf#page=10"
+      },
+      {
+        "id": "ors-chapter-5",
+        "title": "LVV Certifier Application & Appointment",
+        "url": "https://lvvta.org.nz/documents/ors/LVVTA_Operating_Requirements_Schedule_V2.3_2022-11-29.pdf#page=12"
+      }
+    ]
+  },
+  {
+    "id": "lvv-standards",
+    "title": "LVV Standards (Technical Standards)",
+    "description": "These standards provide detailed technical specifications for various vehicle systems.",
+    "documents": [
+      {
+        "id": "lvv-standard-40",
+        "title": "Brakes",
+        "url": "https://lvvta.org.nz/documents.html#standards"
+      },
+      {
+        "id": "lvv-standard-50",
+        "title": "Steering & Suspension",
+        "url": "https://lvvta.org.nz/documents.html#standards"
+      },
+      {
+        "id": "lvv-standard-60",
+        "title": "Structure & Strength",
+        "url": "https://lvvta.org.nz/documents.html#standards"
+      },
+      {
+        "id": "lvv-standard-70",
+        "title": "Engine & Drivetrain",
+        "url": "https://lvvta.org.nz/documents.html#standards"
+      },
+      {
+        "id": "lvv-standard-80",
+        "title": "Electrical Systems",
+        "url": "https://lvvta.org.nz/documents.html#standards"
+      }
+    ]
+  },
+  {
+    "id": "lvv-code",
+    "title": "LVV Code",
+    "description": "The LVV Code is a summary of, and guide to, the laws that must be complied with during the modification, construction, and certification of low volume vehicles.",
+    "documents": [
+      {
+        "id": "lvv-code-document",
+        "title": "LVV Code",
+        "url": "https://www.lvvta.org.nz/documents/suplimentary_information/LVVTA_LVV_Code_V2.1_2019-03-27.pdf"
+      }
+    ]
+  },
+  {
+    "id": "certification-forms",
+    "title": "Certification Forms",
+    "description": "The forms required for the LVV certification process.",
+    "documents": [
+      {
+        "id": "certification-forms-page",
+        "title": "Certification Forms",
+        "url": "https://lvvta.org.nz/documents.html#forms"
+      }
+    ]
+  },
+  {
+    "id": "supplementary-information",
+    "title": "Supplementary Information",
+    "description": "Additional information and resources to assist with the LVV certification process.",
+    "documents": [
+      {
+        "id": "supplementary-information-page",
+        "title": "Supplementary Information",
+        "url": "https://lvvta.org.nz/documents.html#supplementary"
+      }
+    ]
+  },
+  {
+    "id": "nz-car-construction-manual",
+    "title": "NZ Car Construction Manual (NZCCM)",
+    "description": "The NZ Car Construction Manual (NZCCM) contains information, advice, and recommendations to assist with the construction of scratch-built low volume vehicles.",
+    "documents": [
+      {
+        "id": "nzccm-document",
+        "title": "NZ Car Construction Manual",
+        "url": "https://www.lvvta.org.nz/documents/suplimentary_information/LVVTA_Car_Construction_Manual_V2.0_2019-03-27.pdf"
+      }
+    ]
+  }
+]
