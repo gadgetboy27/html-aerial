@@ -1,38 +1,45 @@
-# LVV Certifier Training Platform Blueprint
+# Project Blueprint: LVV Certifier Training Platform
 
-## 1. Overview
+## Overview
 
-A comprehensive web-based training and certification preparation platform for aspiring Low Volume Vehicle (LVV) Certifiers in New Zealand. This application provides structured learning, searchable documentation, testing capabilities, and progress tracking to help participants master the LVVTA certification requirements.
+This document outlines the design, features, and development plan for the LVV Certifier Training Platform. The goal is to create a modern, visually appealing, and intuitive application that helps aspiring Low Volume Vehicle (LVV) Certifiers in New Zealand prepare for their certification.
 
-## 2. Implemented Features, Styles, and Designs
+## Current State: Initial Landing Page
 
-This section outlines the features, styles, and designs that have been implemented in the application.
+The current focus is on building the initial landing page. This will serve as the foundation for the application and provide a great first impression to users.
 
-### UI/UX Overhaul
+### Design and Styling
 
-*   **New Layout:** A dynamic and easy-to-navigate layout has been implemented, with a sidebar for navigation and a main content area.
-*   **Color Palette and Typography:** A professional and modern color palette has been introduced, with a focus on cyan for interactive elements. The typography has been improved for better readability.
-*   **Iconography:** Custom icons from Heroicons are used throughout the application to improve usability.
-*   **Improved Modals:** The modals for displaying module content and quizzes have been redesigned to be more user-friendly and visually appealing.
+*   **Component Library:** Chakra UI will be used for its extensive set of accessible and composable React components.
+*   **Color Palette:** A professional and trustworthy palette of blues, grays, and whites will be used.
+*   **Typography:** The "Inter" font will be used for its clean and modern look. A clear visual hierarchy will be established using different font sizes and weights.
+*   **Iconography:** `lucide-react` will be used for clean and modern icons.
+*   **Layout:** A grid-based layout with generous spacing will be used to create a clean and uncluttered design.
 
-### Core Features
+### Features
 
-*   **Comprehensive PDF Document Database:** The full catalog of all LVVTA documents is organized by category and displayed in a user-friendly format. Each document can be opened in a new tab.
-*   **Advanced Search Functionality:** A full-text search across all document titles, descriptions, and categories is implemented, with the search results updating in real-time.
-*   **Structured Learning Modules:** Learning modules are presented in a structured format. Each module has a title, description, and a button to view the content in a modal.
-*   **Testing Environment:** Module quizzes and practice exams are available. The quiz interface is interactive, and the user receives immediate feedback on their score. Passing a quiz marks the corresponding module as complete.
+The landing page will consist of the following sections:
 
-### Implemented Features
+*   **Header:** A navigation bar with the app's logo and links to "Features", "How it Works", and "Testimonials".
+*   **Hero Section:** A welcoming headline, a subheading, and a call-to-action button.
+*   **Features Section:** A showcase of the app's key features with icons and short descriptions.
+*   **How it Works Section:** A step-by-step guide on how to use the platform.
+*   **Testimonials Section:** A section with user testimonials to build social proof.
+*   **Footer:** A standard footer with links and copyright information.
 
-*   **Study Aids:**
-    *   A dedicated "Study Aids" section has been created.
-    *   A glossary of technical terms is available.
-    *   Quick reference cards provide essential facts at a glance.
-*   **Enhanced Progress Tracking & User Profile:**
-    *   A "Profile" section has been created to provide an overview of the user's progress.
-    *   The user can view their completed modules and quiz scores.
-    *   An achievement system has been implemented to reward users for milestones, such as passing their first quiz or completing all modules.
+## Development Plan
 
-## 3. Deployment
-
-*   [X] The application is now ready for deployment.
+1.  **Setup Chakra UI:** Create a `ChakraProvider` to wrap the application and provide the theme. (Already complete)
+2.  **Create Root Layout:** Set up the basic HTML structure in `app/layout.tsx`. (Already complete)
+3.  **Build Landing Page:** Create the main landing page file at `app/page.tsx`.
+4.  **Develop Components:** Create reusable React components for each section of the landing page:
+    *   `Navbar.tsx`
+    *   `Hero.tsx`
+    *   `Features.tsx`
+    *   `HowItWorks.tsx`
+    *   `Testimonials.tsx`
+    *   `Footer.tsx`
+5.  **Style Components:** Apply styles to each component using Chakra UI's props and theme, following the design guidelines.
+6.  **Add Assets:** Incorporate icons and any necessary images.
+7.  **Review and Refine:** Ensure the landing page is responsive and visually polished.
+8.  **Gamified Coaching Features:** Once the landing page is complete, I will begin to implement the gamified coaching features, starting with a user dashboard and progress tracking.
